@@ -13,7 +13,7 @@ molecule = Molecule(ARGS[1])
 crystal = Framework(ARGS[2])
 strip_numbers_from_atom_labels!(crystal)
 temperature = parse(Float64, ARGS[3])
-ljforcefield = LJForceField(ARGS[4], cutoffradius=14.0, mixing_rules="Lorentz-Berthelot")
+ljforcefield = LJForceField(ARGS[4], cutoffradius=14.0, mixing_rules="geometric")
 insertions_per_volume = parse(Float64, ARGS[5])
 
 # run the simulation
