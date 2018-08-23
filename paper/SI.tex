@@ -1,0 +1,314 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This is a (brief) model paper using the achemso class
+%% The document class accepts keyval options, which should include
+%% the target journal and optionally the manuscript type.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[journal=jacsat,manuscript=article]{achemso}
+\setkeys{acs}{articletitle = true} % show titles in bibliography
+%\documentclass[prb,11pt]{revtex4-1}
+%\usepackage[sort&compress,numbers,super]{natbib} 
+%\usepackage{achemso} 
+\SectionNumbersOn 
+\usepackage{wrapfig}
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+% 
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\usepackage{amsfonts}
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{0.7\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Place any additional packages needed here.  Only include packages
+%% which are essential, to avoid problems later. Do NOT use any
+%% packages which require e-TeX (for example etoolbox): the e-TeX
+%% extensions are not currently available on the ACS conversion
+%% servers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[version=3]{mhchem} % Formula subscripts using \ce{}
+\usepackage[T1]{fontenc}       % Use modern font encodings
+\usepackage{subfig}
+\usepackage{url}
+\usepackage{xr} % external referecnes
+\externaldocument{SI}
+\renewcommand{\thepage}{S\arabic{page}}  
+\renewcommand{\thesection}{S\arabic{section}}   
+\renewcommand{\thetable}{S\arabic{table}}   
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\usepackage{xr} % external referecnes
+\externaldocument{latent_space_of_cages}
+\usepackage{natbib} 
+
+% so S2.1
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+
+% to prevent counter too large in subfigure
+\usepackage{alphalph}
+\renewcommand*{\thesubfigure}{%
+\alphalph{\value{subfigure}}%
+}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% If issues arise when submitting your manuscript, you may want to
+%% un-comment the next line.  This provides information on the
+%% version of every file you have used.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\listfiles
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Place any additional macros here.  Please use \newcommand* where
+%% possible, and avoid layout-changing macros (which are not used
+%% when typesetting).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*\mycommand[1]{\texttt{\emph{#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Meta-data block
+%% ---------------
+%% Each author should be given as a separate \author command.
+%%
+%% Corresponding authors should have an e-mail given after the author
+%% name as an \email command. Phone and fax numbers can be given
+%% using \phone and \fax, respectively; this information is optional.
+%%
+%% The affiliation of authors is given after the authors; each
+%% \affiliation command applies to all preceding authors not already
+%% assigned an affiliation.
+%%
+%% The affiliation takes an option argument for the short name.  This
+%% will typically be something like "University of Somewhere".
+%%
+%% The \altaffiliation macro should be used for new address, etc.
+%% On the other hand, \alsoaffiliation is used on a per author basis
+%% when authors are associated with multiple institutions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Arni Sturluson}
+\affiliation[Oregon State University]
+{School of Chemical, Biological, and Environmental Engineering. Corvallis, OR, USA.}
+\author{Melanie T. Huynh}
+\affiliation[Oregon State University]
+{School of Chemical, Biological, and Environmental Engineering. Corvallis, OR, USA.}
+\author{Arthur H. P. York}
+\affiliation[Oregon State University]
+{School of Chemical, Biological, and Environmental Engineering. Corvallis, OR, USA.}
+\author{Cory M. Simon}
+%\altaffiliation{A shared footnote}
+\email{Cory.Simon@oregonstate.edu}
+\affiliation[Oregon State University]
+{School of Chemical, Biological, and Environmental Engineering. Corvallis, OR, USA.}
+%\altaffiliation{A shared footnote}
+%\email{Cory.Simon@oregonstate.edu}
+%\affiliation[Oregon State University]
+%{School of Chemical, Biological, and Environmental Engineering. Corvallis, OR, USA.}
+%\author{Carlo Carraro}
+%\affiliation[University of California, Berkeley]
+%{Department of Chemical and Biomolecular Engineering. Berkeley, CA, USA.}
+%\altaffiliation{Current address: Some other place, Othert\"own,
+%Germany}
+%\author{I. Ken Groupleader}
+%\altaffiliation{A shared footnote}
+%\email{i.k.groupleader@unknown.uu}
+%\phone{+123 (0)123 4445556}
+%\fax{+123 (0)123 4445557}
+%\affiliation[Unknown University]
+%{Department of Chemistry, Unknown University, Unknown Town}
+%\alsoaffiliation[Second University]
+%{Department of Chemistry, Second University, Nearby Town}
+%\author{Susanne K. Laborator}
+
+%\affiliation[BigPharma]
+%{Lead Discovery, BigPharma, Big Town, USA}
+%\author{Kay T. Finally}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The document title should be given as usual. Some journals require
+%% a running title from the author: this should be supplied as an
+%% optional argument to \title.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[SI: Latent Space of Porous Cages]
+  {Supporting Information for: Eigencages: Learning a latent space of porous cages}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Some journals require a list of abbreviations or keywords to be
+%% supplied. These should be set up here, and will be printed after
+%% the title and author information, if needed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abbreviations{IR,NMR,UV}
+\keywords{American Chemical Society, \LaTeX}
+\newcommand{\angstrom}{\mbox{\normalfont\AA}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The manuscript does not need to include \maketitle, which is
+%% executed automatically.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The "tocentry" environment can be used to create an entry for the
+%% graphical table of contents. It is given here as some journals
+%% require that it is printed as part of the abstract page. It will
+%% be automatically moved as appropriate.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{tocentry}
+%
+%Some journals require a graphical entry for the Table of Contents.
+%This should be laid out ``print ready'' so that the sizing of the
+%text is correct.
+%
+%Inside the \texttt{tocentry} environment, the font used is Helvetica
+%8\,pt, as required by \emph{Journal of the American Chemical
+%Society}.
+%
+%The surrounding frame is 9\,cm by 3.5\,cm, which is the maximum
+%permitted for  \emph{Journal of the American Chemical Society}
+%graphical table of content entries. The box will not resize if the
+%content is too big: instead it will overflow the edge of the box.
+%
+%This box and the associated title will always be printed on a
+%separate page at the end of the document.
+%
+%\end{tocentry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The abstract environment will automatically gobble the contents
+%% if an abstract is not used by the target journal.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{abstract}
+%We use statistical thermodynamics to answer a simple question: what happens when an adsorbent is allowed to exchange gas with a rubber balloon? Richard Feynman described rubber as 'molecular spaghetti'. A statistical mechanical treatment of this molecular view of rubber captures the relationship between the pressure of gas in a rubber balloon and its radius. As a consequence of the non-monotonicity of this relationship, a gas-adsorbent-balloon system presents multi- and in-stabilities. In contrast, we show that two different adsorbents allowed to exchange gas cannot exhibit multi-stability.
+%\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Start the main part of the manuscript here.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Distribution of cage molecule and cavity diameters}
+
+\begin{figure}
+\centering
+	\includegraphics[width=0.65\columnwidth]{../pywindow_descriptors_distn.png}
+	\caption{The distribution of cage molecule diameters (red) and cage cavity diameters (blue) among the 74 cages analyzed in this work. These diameters were computed with \texttt{pywindow}. \cite{miklitz2018pywindow}.
+	} \label{fig:pywindow_descriptors_distn}
+\end{figure}
+
+\newpage
+\clearpage
+
+\section{Aligning the cages before scanning} 
+\label{sec:alignment_details}
+We compute the $3\times 3$ moment of inertia matrix $\mathbf{I}$ of the cage, defined relative to the center of mass, and find its eigendecomposition $\mathbf{I}=\mathbf{W}\mathbf{\Lambda}\mathbf{W^T}$, with the eigenvalues arranged in a non-increasing order down the diagonal matrix $\mathbf{\Lambda}$ and the orthonormal eigenvectors in the columns of $\mathbf{W}$. Then, we transform the coordinates of the centered cage by left-multiplying by the rotation matrix $\mathbf{W^T}$. The rotated cage then possesses a diagonal moment of inertia matrix with the moments of inertia arranged in a non-increasing order down the diagonal.
+
+\section{The data matrix $\mathbf{A}$}
+
+\begin{figure}
+\centering
+	\includegraphics[width=\columnwidth]{../data_matrix_viz.png}
+	\caption{An attempt at visualizing the structure of the $c \times g^3$ data matrix $\mathbf{A}$. The color depicts the magnitude of the entry of the matrix. This is an ``attempt'' because $g^3>>c$, so the data matrix $\mathbf{A}$ is wide and difficult to visualize without a longer page. Zoom in to see some structure. We remark that 10771/15625 of the columns (representing pixels in the cage cavity images) are all zeros.
+	} \label{fig:data_matrix}
+\end{figure}
+
+\newpage
+\clearpage
+
+\section{The singular values of $\mathbf{A}$}
+
+\begin{figure}
+\centering
+	\includegraphics[width=0.65\columnwidth]{../distn_of_svs.png}
+	\caption{The distribution of the set of singular values $\sigma_1,\sigma_2, ..., \sigma_{74}$ of $\mathbf{A}$.
+	} \label{fig:distn_of_svs}
+\end{figure}
+
+\newpage
+\clearpage
+
+\section{Relative error from approximating $\mathbf{A}$ as $\mathbf{A}_\nu$}
+
+\begin{figure}
+\centering
+	\includegraphics[width=0.65\columnwidth]{../relative_err_with_svs.png}
+	\caption{The relative error in approximating the data matrix $\mathbf{A}$ with a lower-rank-$\nu$ approximant $\mathbf{A}_\nu$ given in eqn.~\ref{eq:Anu}. The formula for the relative error as a function of $\nu$, related to the singular values of $\mathbf{A}$, is given in eqn.~\ref{eq:relative_error}.
+	} \label{fig:relative_err_with_svs}
+\end{figure}
+
+\newpage
+\clearpage
+
+\section{Highlighting remaining clusters in latent cage space}
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=0.9\columnwidth]{../latent_cage_space_2D_marked_SI.png}
+	\caption{The latent space of cages $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$ embedded into 2D by t-SNE \cite{maaten2008visualizing,wattenberg2016how}. Salient clusters are highlighted. See Fig.~\ref{fig:latent_space} for the remaining clusters.
+	} \label{fig:latent_space2}
+\end{figure}
+
+
+\newpage
+\clearpage
+
+
+\section{Henry coefficient calculations} We describe more details here of the Henry coefficient calculations used to obtain the data in Fig.~\ref{fig:latent_space_S_Xe_Kr}. We model the energetics of the interaction of a gas atom (Xe, Kr, He) with the atoms of the cage as pairwise additive and with 12-6 Lennard-Jones potentials. The $\epsilon_i$ and $\sigma_i$ parameters of the Lennard-Jones potentials for atom $i$- atom $i$ interactions are taken from the Universal Force Field \cite{rappe1992uff} (cutoff radius 14~$\angstrom$). Geometric mixing rules are applied for cross-interactions. 
+
+We placed an isolated cage molecule in an empty simulation box and took it as rigid. If $\mathbf{x} \in \mathbb{R}^3$ is the position of a gas atom in the simulation box, the molecular model described above gives us the potential energy of the gas molecule, $U(\mathbf{x})$.
+
+Consider the isolated porous cage molecule immersed in a bath of gas; the simulation box is drawn around the porous cage molecule. Henry's law models the density of gas adsorbed in the simulation box, $\rho $, as $\rho=K P$, with $K$ the Henry coefficient and $P$ the pressure of the gas. Henry's law is valid only at low surface coverage.
+
+The Henry coefficient of a gas in the simulation box including the isolated cage molecule is given as:
+\begin{equation}
+K = \beta \frac{1}{|\Omega|} \int_\Omega e^{-\beta U(\mathbf{x})} d\mathbf{x},
+\label{eq:K}
+\end{equation} where $\beta= (k_B T)^{-1}$ is the thermodynamic beta ($T$ temperature, $k_B$ Boltzmann constant) and the integral is over the simulation box $\Omega$ (which has volume $|\Omega|$). Note that if $U(\mathbf{x})=0$, Henry's law recovers the ideal gas law $\rho = \beta P$, where $|\Omega|$ is the volume of the simulation box.
+
+We computed the average in eqn.~\ref{eq:K} via Monte Carlo integration, i.e. Widom particle insertions \cite{frenkel2001understanding}, using 1000 Monte Carlo insertions per volume ($\angstrom^3$) of the simulation box. We used \texttt{PorousMaterials.jl} v0.1.1 \cite{PorousMaterialsJL} to compute the Henry coefficient.
+
+\newpage
+\clearpage
+
+\section{Relationship of latent representation and cage molecule and cavity diameters}
+
+\begin{figure}
+\centering
+	\includegraphics[width=\columnwidth]{../cage_space_colored_by_diams_2D.png}
+	\caption{The 2D embedding (by t-SNE) of the learned latent representation of the 3D cavity images contained in the rows of $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$. Here, the diameter of points represents molecule diameter; color represents cavity diameter, both computed by \texttt{pywindow} \cite{miklitz2018pywindow}. Note that neighbors in latent space tend to have similar cavity and molecule diameters.
+	} \label{fig:cage_space_colored_by_diams_2D}
+\end{figure}
+
+\newpage
+\clearpage
+
+\section{Relationship of latent representation and number of windows to enter cavity}
+
+\begin{figure}
+\centering
+	\includegraphics[width=\columnwidth]{../cage_space_colored_by_nb_windows.png}
+	\caption{The 2D embedding (by t-SNE) of the learned latent representation of the 3D cavity images contained in the rows of $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$. Here, the color represents the number of windows the cage molecules possesses, through which gas molecules can enter the cavity. The number of windows is computed by \texttt{pywindow} \cite{miklitz2018pywindow}. Note that cages within clusters in latent space have the same number of windows.
+	} \label{fig:cage_space_colored_by_nb_windows}
+\end{figure}
+
+\newpage
+\clearpage
+
+
+% see viz.ipynb
+\section{Visualization of the cage structures}
+Larger images of the cages in Fig.~\ref{fig:cages} are shown in Fig.~\ref{fig:allcagesdetailed}.
+\captionsetup[subfigure]{labelformat=empty} % get rid of a b c d
+\input{../all_cages/latex_code_for_viz.tex}
+
+\newpage
+\clearpage
+
+
+\section{Safety statement}
+As this research is all computational in nature, no unexpected or unusually high safety hazards were encountered.
+
+\clearpage
+
+\bibliography{bibfile}
+\end{document}
