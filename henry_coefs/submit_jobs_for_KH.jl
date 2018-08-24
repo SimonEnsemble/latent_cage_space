@@ -1,3 +1,5 @@
+# GOAL: calculate the KH value of every crystal in /data/crystals with He, Kr, and Xe using one core each
+
 using PorousMaterials
 using DataFrames
 using CSV
@@ -37,20 +39,20 @@ function write_henry_submit_script(molecule::AbstractString, crystal::String, te
     #\$ -cwd
 
     # name this job
-    #\$ -N %s
+    #\$ -N KH_data
 
     # send stdout and stderror to this file
     #\$ -o jobz/%s.o
     #\$ -e jobz/%s.e
 
     # select queue - if needed; mime5 is SimonEnsemble priority queue but is restrictive.
-    #\$ -q  mime5
+    ##\$ -q share,share2,share3,share4, mime5
 
     # print date and time
     date
-    julia run_henry.jl %s %s %f %s %d
-    """, crystal * "_" * molecule * "_" * string(insertions_per_volume), crystal * "_" * molecule, crystal * "_" * molecule, molecule, crystal, temperature,
-        ljforcefield, insertions_per_volume)
+    julia run_henry.jl %s %s %f %s %s %d
+    """, crystal * "_" * molecule * "_" * mixing_rules, crystal * "_" * molecule * "_" * mixing_rules, molecule, crystal, temperature,
+        ljforcefield, mixing_rules, insertions_per_volume)
     close(KH_submit)
 end
 

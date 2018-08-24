@@ -1,8 +1,8 @@
 using PorousMaterials
 
 # example use, e.g. to run Henry Coefficient simulation of CH4 in FIQCEN_clean.cif
-# at 298.0 K with UFF forcefieldwith 100 insertions.
-#   julia run_henry.jl CH4 FIQCEN_clean 298.0 UFF 100.0
+# at 298.0 K with UFF forcefield with 100 insertions.
+#   julia run_henry.jl He FIQCEN_clean.cif 298.0 UFF.csv 100.0
 
 # read in command line arguments
 if length(ARGS) != 5
