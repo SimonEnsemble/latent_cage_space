@@ -5,7 +5,7 @@ using DataFrames
 using CSV
 
 # defines number of insertions of a molecule into a single crystal
-insertions_per_volume = 1000.0
+insertions_per_volume = 1000
 # defines Lennard Jones forcefield
 ljforcefield = "UFF.csv"
 # defines temperature
