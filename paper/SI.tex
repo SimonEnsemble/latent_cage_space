@@ -253,7 +253,7 @@ We compute the $3\times 3$ moment of inertia matrix $\mathbf{I}$ of the cage, de
 \clearpage
 
 
-\section{Henry coefficient calculations} We describe more details here of the Henry coefficient calculations used to obtain the data in Fig.~\ref{fig:latent_space_S_Xe_Kr}. We model the energetics of the interaction of a gas atom (Xe, Kr, He) with the atoms of the cage as pairwise additive and with 12-6 Lennard-Jones potentials. The $\epsilon_i$ and $\sigma_i$ parameters of the Lennard-Jones potentials for atom $i$- atom $i$ interactions are taken from the Universal Force Field \cite{rappe1992uff} (cutoff radius 14~$\angstrom$). Geometric mixing rules are applied for cross-interactions. 
+\section{Henry coefficient calculations} \label{sec:henrydetails} We describe more details here of the Henry coefficient calculations used to obtain the data in Fig.~\ref{fig:latent_space_S_Xe_Kr}. We model the energetics of the interaction of a gas atom (Xe, Kr, He) with the atoms of the cage as pairwise additive and with 12-6 Lennard-Jones potentials. The $\epsilon_i$ and $\sigma_i$ parameters of the Lennard-Jones potentials for atom $i$- atom $i$ interactions are taken from the Universal Force Field \cite{rappe1992uff} (cutoff radius 14~$\angstrom$). Geometric mixing rules are applied for cross-interactions. 
 
 We placed an isolated cage molecule in an empty simulation box and took it as rigid. If $\mathbf{x} \in \mathbb{R}^3$ is the position of a gas atom in the simulation box, the molecular model described above gives us the potential energy of the gas molecule, $U(\mathbf{x})$.
 
@@ -266,6 +266,19 @@ K = \beta \frac{1}{|\Omega|} \int_\Omega e^{-\beta U(\mathbf{x})} d\mathbf{x},
 \end{equation} where $\beta= (k_B T)^{-1}$ is the thermodynamic beta ($T$ temperature, $k_B$ Boltzmann constant) and the integral is over the simulation box $\Omega$ (which has volume $|\Omega|$). Note that if $U(\mathbf{x})=0$, Henry's law recovers the ideal gas law $\rho = \beta P$, where $|\Omega|$ is the volume of the simulation box.
 
 We computed the average in eqn.~\ref{eq:K} via Monte Carlo integration, i.e. Widom particle insertions \cite{frenkel2001understanding}, using 1000 Monte Carlo insertions per volume ($\angstrom^3$) of the simulation box. We used \texttt{PorousMaterials.jl} v0.1.1 \cite{PorousMaterialsJL} to compute the Henry coefficient.
+
+\subsection{Comparing to experimental data}
+By considering only an isolated cage molecule in a simulation box, as opposed to many cage molecules packed together to form a solid, we account for only the influence of the intrinsic porosity to the cage molecule on the adsorption. This is an approximation, as we are neglecting the influence of the extrinsic porosity that arises from how the cage molecules pack together to form a bulk solid. When the cage molecules pack together, the adsorption sites on the exterior of the molecule or at the cage windows can be modified depending on how the cage molecules pack together. However, when the interior of the cage molecule is the dominant adsorption site in the bulk solid, this approach may be a viable method to predict the Henry coefficient of a bulk porous cage solid.
+
+To evaluate our crude method of considering an isolated cage molecule, Fig.~\ref{fig:expt_sim_compare} compares experimentally measured xenon and krypton adsorption isotherms in noria \cite{patil2016noria} (NC2) and CC3 \cite{chen2014separation} to the resulting Henry's law with the Henry coefficient obtained from our simulations. For noria, the approach works very well; for CC3, the Henry coefficients are underestimated. See Patil et. al \cite{patil2016noria} for more discussion.
+
+\begin{figure}
+\centering
+	\includegraphics[width=0.4\columnwidth]{../noria_expt_sim_comparison.png}
+	\includegraphics[width=0.4\columnwidth]{../CC3_expt_sim_comparison.png}
+	\caption{Comparison of experimental xenon and krypton adsorption isotherms at 298 K in noria \cite{patil2016noria} and CC3 \cite{chen2014separation} to the simulated adsorption. Points show experimental data and the lines show Henry's law with the Henry coefficient taken from our simulations. The simulated Henry coefficient of He was subtracted to account for the empty space in the simulation box.
+	} \label{fig:expt_sim_compare}
+\end{figure}
 
 \newpage
 \clearpage
