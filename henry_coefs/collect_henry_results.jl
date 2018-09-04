@@ -12,20 +12,20 @@ df = Dict("He" => DataFrame(:cage => String[], Symbol("KH_mol/(m³-bar)") => Flo
                                                 Symbol("KH_mmol/(g-bar)") => Float64[],
                                                 Symbol("KH_mmol/(kg-Pa)") => Float64[],
                                                 Symbol("err_KH_mmol/(g-bar)") => Float64[],
-                                                Symbol("Qst_kJ/mol") => Float64[]),
-                                                Symbol("elapsed time (min)") => Float64[])
-     Dict("Xe" => DataFrame(:cage => String[], Symbol("KH_mol/(m³-bar)") => Float64[],
+                                                Symbol("Qst_kJ/mol") => Float64[],
+                                                Symbol("elapsed time (min)") => Float64[]),
+          "Xe" => DataFrame(:cage => String[], Symbol("KH_mol/(m³-bar)") => Float64[],
                                                 Symbol("KH_mmol/(g-bar)") => Float64[],
                                                 Symbol("KH_mmol/(kg-Pa)") => Float64[],
                                                 Symbol("err_KH_mmol/(g-bar)") => Float64[],
-                                                Symbol("Qst_kJ/mol") => Float64[]),
-                                                Symbol("elapsed time (min)") => Float64[])
-     Dict("Kr" => DataFrame(:cage => String[], Symbol("KH_mol/(m³-bar)") => Float64[],
+                                                Symbol("Qst_kJ/mol") => Float64[],
+                                                Symbol("elapsed time (min)") => Float64[]),
+          "Kr" => DataFrame(:cage => String[], Symbol("KH_mol/(m³-bar)") => Float64[],
                                                 Symbol("KH_mmol/(g-bar)") => Float64[],
                                                 Symbol("KH_mmol/(kg-Pa)") => Float64[],
                                                 Symbol("err_KH_mmol/(g-bar)") => Float64[],
-                                                Symbol("Qst_kJ/mol") => Float64[]),
-                                                Symbol("elapsed time (min)") => Float64[])
+                                                Symbol("Qst_kJ/mol") => Float64[],
+                                                Symbol("elapsed time (min)") => Float64[]))
 # define insertions used
 insertions_per_volume = 1000.0
 # define force field used
@@ -54,6 +54,6 @@ for gas in ["He", "Xe", "Kr"]
             @printf("Did not find the following file:\n%s\n", result_file)
         end
     # writes CSV file using empty dictionary
-    CSV.write("_cage_KH.csv", df[gas])
+    CSV.write(gas * "_cage_KH.csv", df[gas])
     end
 end
