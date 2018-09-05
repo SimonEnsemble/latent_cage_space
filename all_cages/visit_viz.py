@@ -2,9 +2,10 @@
 # or omit -nowin
 print("may need to change home dir...")
 def write_png(xyzname, zoom, show_box=True):
+    DeleteActivePlots()
     # open .vtk file
     if show_box:
-        OpenDatabase("localhost:../data/grids/snapshot.vtk", 0)
+        OpenDatabase("localhost:snapshot.vtk", 0)
         AddPlot("Mesh", "mesh")
         DrawPlots()
 
@@ -360,6 +361,8 @@ def write_png(xyzname, zoom, show_box=True):
     DeleteActivePlots()
 
 cages = [line.rstrip('\n') for line in open('all_cages.txt')]
-write_png("RCC1d_aligned", 1.25, show_box=False)
- # for cage in cages:
- #     write_png(cage + "_aligned", 1.25)
+ # write_png("RCC1d_aligned", 1.3, show_box=False)
+ # write_png("RCC1d_aligned", 1.3, show_box=True)
+for cage in cages:
+    write_png(cage + "_aligned", 1.3, show_box=True)
+    write_png(cage + "_aligned", 1.3, show_box=False)
