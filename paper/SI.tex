@@ -208,7 +208,7 @@ We compute the $3\times 3$ moment of inertia matrix $\mathbf{I}$ of the cage, de
 \begin{figure}
 \centering
 	\includegraphics[width=\columnwidth]{../data_matrix_viz.png}
-	\caption{An attempt at visualizing the structure of the $c \times g^3$ data matrix $\mathbf{A}$. The color depicts the magnitude of the entry of the matrix. This is an ``attempt'' because $g^3>>c$, so the data matrix $\mathbf{A}$ is wide and difficult to visualize without a longer page. Zoom in to see some structure. We remark that 10879/15625 of the columns (representing pixels in the cage cavity images) are all zeros.
+	\caption{An attempt at visualizing the structure of the $c \times g^3$ data matrix $\mathbf{A}$. The color depicts the magnitude of the entry of the matrix. This is an ``attempt'' because $g^3>>c$, so the data matrix $\mathbf{A}$ is wide and difficult to visualize without a longer page. Zoom in to see some structure. We remark that 10879/15625 of the columns (representing pixels in the cage void space images) are all zeros.
 	} \label{fig:data_matrix}
 \end{figure}
 
@@ -290,7 +290,7 @@ Fig.~\ref{fig:cage_space_colored_by_diams_2D} depicts how the 2D embedding (by t
 \begin{figure}
 \centering
 	\includegraphics[width=0.9\columnwidth]{../first_component_captures_pore_diameter.pdf}
-	\caption{The first component of the latent representation of a cage is strongly correlated to its cavity diameter. The cavity diameter was computed by \texttt{pywindow} \cite{miklitz2018pywindow}. In the reconstruction of the 3D cavity image of a given cage, the first component of the latent representation (in the first column of $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$) is the weight on the first eigencage $\mathbf{v}_1$ in the reconstruction of the 3D cage cavity image via eqn.~\ref{eq:latent_space_view}. That the first eigencage is a good descriptor of pore size is suggested by the radial symmetry of the core of the first eigencage in Fig.~\ref{fig:eigencages} that is added to the approximately radially symmetric average cage $\bar{\mathbf{c}}$ to reconstruct the 3D cage cavity image via eqn.~\ref{eq:latent_space_view}.
+	\caption{The first component of the latent representation of a cage is strongly correlated to its cavity diameter. The cavity diameter was computed by \texttt{pywindow} \cite{miklitz2018pywindow}. In the reconstruction of the 3D void space image of a given cage, the first component of the latent representation (in the first column of $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$) is the weight on the first eigencage $\mathbf{v}_1$ in the reconstruction of the 3D void space image via eqn.~\ref{eq:latent_space_view}. That the first eigencage is a good descriptor of pore size is suggested by the radial symmetry of the core of the first eigencage in Fig.~\ref{fig:eigencages} that is added to the approximately radially symmetric average cage $\bar{\mathbf{c}}$ to reconstruct the 3D void space image via eqn.~\ref{eq:latent_space_view}.
 	} \label{fig:first_component_captures_pore_diameter}
 \end{figure}
 
@@ -298,7 +298,7 @@ Fig.~\ref{fig:cage_space_colored_by_diams_2D} depicts how the 2D embedding (by t
 \begin{figure}
 \centering
 	\includegraphics[width=\columnwidth]{../cage_space_colored_by_diams_2D.png}
-	\caption{The 2D embedding (by t-SNE) of the learned latent representation of the 3D cavity images contained in the rows of $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$. Here, the diameter of points represents molecule diameter; color represents cavity diameter, both computed by \texttt{pywindow} \cite{miklitz2018pywindow}. Note that neighbors in latent space tend to have similar cavity and molecule diameters.
+	\caption{The 2D embedding (by t-SNE) of the learned latent representation of the 3D void space images contained in the rows of $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$. Here, the diameter of points represents molecule diameter; color represents cavity diameter, both computed by \texttt{pywindow} \cite{miklitz2018pywindow}. Note that neighbors in latent space tend to have similar cavity and molecule diameters.
 	} \label{fig:cage_space_colored_by_diams_2D}
 \end{figure}
 
@@ -310,7 +310,7 @@ Fig.~\ref{fig:cage_space_colored_by_diams_2D} depicts how the 2D embedding (by t
 \begin{figure}
 \centering
 	\includegraphics[width=\columnwidth]{../cage_space_colored_by_nb_windows.png}
-	\caption{The 2D embedding (by t-SNE) of the learned latent representation of the 3D cavity images contained in the rows of $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$. Here, the color represents the number of windows possessed by the cage molecule. The gas molecules enter the cavity of the cage through the windows. The number of windows is computed by \texttt{pywindow} \cite{miklitz2018pywindow}. Note that cages within clusters in latent space have the same number of windows.
+	\caption{The 2D embedding (by t-SNE) of the learned latent representation of the 3D void space images contained in the rows of $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$. Here, the color represents the number of windows possessed by the cage molecule. The gas molecules enter the cavity of the cage through the windows. The number of windows is computed by \texttt{pywindow} \cite{miklitz2018pywindow}. Note that cages within clusters in latent space have the same number of windows.
 	} \label{fig:cage_space_colored_by_nb_windows}
 \end{figure}
 
