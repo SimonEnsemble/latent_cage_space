@@ -199,9 +199,45 @@
 \newpage
 \clearpage
 
-\section{Aligning the cages before scanning} 
+\section{Aligning the cages before scanning for void space} 
 \label{sec:alignment_details}
-We compute the $3\times 3$ moment of inertia matrix $\mathbf{I}$ of the cage, defined relative to the center of mass, and find its eigendecomposition $\mathbf{I}=\mathbf{W}\mathbf{\Lambda}\mathbf{W^T}$, with the eigenvalues arranged in a non-increasing order down the diagonal matrix $\mathbf{\Lambda}$ and the orthonormal eigenvectors in the columns of $\mathbf{W}$. Then, we transform the coordinates of the centered cage by left-multiplying by the rotation matrix $\mathbf{W^T}$. The rotated cage then possesses a diagonal moment of inertia matrix with the moments of inertia arranged in a non-increasing order down the diagonal.
+We compute the $3\times 3$ symmetric moment of inertia matrix $\mathbf{I}$ of the cage, defined relative to the center of mass, and find its eigendecomposition $\mathbf{I}=\mathbf{W}\mathbf{\Lambda}\mathbf{W^T}$, with the eigenvalues arranged in a non-increasing order down the diagonal matrix $\mathbf{\Lambda}$ and the orthonormal eigenvectors in the columns of $\mathbf{W}$. {\color{red} The eigenvectors of the matrix $\mathbf{I}$ are the principal axes of inertia, and the associated eigenvalues are the moments of inertia with respect to those axes.} Then, we transform the coordinates of the centered cage by left-multiplying by the rotation matrix $\mathbf{W^T}$. The rotated cage then possesses a diagonal moment of inertia matrix with the moments of inertia arranged in a non-increasing order down the diagonal.
+
+{\color{red}
+\subsection{Degenerate principal axes of inertia}
+Molecules that exhibit symmetry can possess degenerate moments and principal axes of inertia. As an example, consider sulfur trioxide (SO$_3$), a trigonal planar molecule, shown in Fig.~\ref{fig:SO3}. Its moment of inertia matrix $\mathbf{I}$, with Cartesian directions defined in Fig.~\ref{fig:SO3} and the sulfur atom at the origin, is:
+\begin{equation}
+\mathbf{I} = m_{\text{O}} \ell_{S-O}^2
+  \begin{bmatrix}
+    3/2 & 0 & 0 \\
+    0 & 3/2 & 0 \\
+    0 & 0 & 3
+  \end{bmatrix}, \label{eq:I_SO3}
+\end{equation} where $m_{\text{O}}$ is the mass of an oxygen atom and $\ell_{S-O}$ is the sulfur-oxygen bond length. The eigenvalues of the moment of inertia matrix $\mathbf{I}$ are 3/2, 3/2, and 3 times $m_{\text{O}} \ell_{S-O}^2$. The eigenvector (unique if unit norm enforced) associated with the largest eigenvalue, $3 m_{\text{O}} \ell_{S-O}^2$, is $[0, 0, 1]$, indicating that the principal axis of inertia with the largest moment of inertia is pointing into the page with respect to Fig.~\ref{fig:SO3}. The remaining two principal axes of inertia must be orthogonal to $[0, 0, 1]$ and thus lay in the $x$-$y$ plane. The moments of inertia about the remaining two principal axes of inertia, however, are equal, as the remaining eigenvalues 3/2, 3/2 times $m_{\text{O}} \ell_{S-O}^2$ are degenerate. In fact, \emph{any} vector laying in the $x$-$y$ plane are eigenvectors of the matrix $\mathbf{I}$ in eqn.~\ref{eq:I_SO3} associated with eigenvalue $3m_{\text{O}} \ell_{S-O}^2/2$. This mathematically indicates that the two remaining principal axes of inertia for SO$_3$ are not unique.
+
+\begin{figure}
+\centering
+	\includegraphics[width=0.3\columnwidth]{../principal_axes_rotation_failure/SO3_axes_marked.png}
+	\caption{Sulfur trioxide (SO$_3$) is a trigonal planar molecule with degenerate principal axes of inertia in the x-y plane.
+	} \label{fig:SO3}
+\end{figure}
+
+As a consequence, the principal axes of inertia for a symmetric molecule such as SO$_3$ do not provide a means to uniquely align the molecule. Thus, e.g. to compare SO$_3$ with respect to a molecule exhibiting the same trigonal planar symmetry, such as boron trifluoride BF$_3$, the principal axes of inertia cannot be used to align the two molecules along their bonds (aside from the principal axes of inertia associated with the largest moment of inertia, $[0 0 1]$ in Fig.~\ref{fig:SO3}). With regards to its rotational dynamics, SO$_3$ behaves as a uniform disk \cite{peraire2008lecture}.
+
+Several cage molecules exhibit a high degree of rotational symmetry, so as to behave akin to SO$_3$, where the principal axes of inertia are not unique and thus cannot be used to consistently align them. For example, the three moments of inertia of CC1 (15869.8, 15869.6, 15869.4 amu-$\angstrom^2$) and of CC3 (32767.1, 32766.9, 32766.6 amu-$\angstrom^2$) are nearly equal, indicating that the rotational dynamics of CC1 and CC3 are akin to a sphere; therefore, using the principal axes of inertial to align CC1 and CC3 (i) theoretically will not provide a unique manner in which to align them and (ii) will be extremely sensitive to small perturbations in the structure. Note that CC3 and CC1 differ only in the vertices external to the cavity, but, as Fig.~\ref{fig:misaligned} shows, CC1 and CC3 are aligned irrationally on the basis of their computed principal axes of inertia due to the [near-]degeneracy of their axes of inertia. Another example that is highly related to the SO$_3$ example in Fig.~\ref{fig:SO3} are B6 and B8, also shown in Fig.~\ref{fig:misaligned}. Here, small differences in the three propeller-blade-like moieties that protrude from B6 and B8 result in significantly inconsistent alignments for comparing B6 and B8. B6 and B8 much resemble the SO$_3$ example in Fig.~\ref{fig:SO3}, as two principal axes of inertia are nearly degenerate and thus the principal axes in that plane (the plane of the page in Fig.~\ref{fig:allcagesdetailed}) are very sensitive to small perturbations in the structure.
+
+\begin{figure}
+\centering
+	\subfloat[][CC3]{\includegraphics[width=0.45\columnwidth]{../all_cages/CC3_aligned.png}}
+	\subfloat[][CC1]{\includegraphics[width=0.45\columnwidth]{../all_cages/CC1_aligned.png}} \qquad
+		\subfloat[][B6]{\includegraphics[width=0.45\columnwidth]{../all_cages/B6_aligned.png}}
+	\subfloat[][B8]{\includegraphics[width=0.45\columnwidth]{../all_cages/B8_aligned.png}}
+	\caption{When the principal axes of inertia do not provide reasonable alignments of cages. (a, b) The rotational dynamics of CC1 and CC3 are akin to a sphere; the three moments of inertia for each CC1 and CC3 are computed to be approximately equal (CC1: 15869.8, 15869.6, 15869.4 amu-$\angstrom^2$; CC3: 32767.1, 32766.9, 32766.6 amu-$\angstrom^2$). Shown are the two cages aligned with their computed principal axes of inertia. Despite differing only in the their vertices at the periphery of the cage, the two molecules are aligned inconsistently/irrationally. (c, d) Shown are cages B6 and B8 aligned with their principal axes of inertia. B6 and B8 have two nearly degenerate axes of inertia (B6: 39371.2, 29141.2, 28881.8 amu-$\angstrom^2$; B8: 27874.4, 23253.6, 23190.7 amu-$\angstrom^2$). As a result, despite only subtle differences in the three propeller-blade-like moieties that protrude from their cores, the molecules are not aligned consistently.
+	} \label{fig:misaligned}
+\end{figure}
+} % end color red
+
+\newpage
 
 \section{The data matrix $\mathbf{A}$}
 
