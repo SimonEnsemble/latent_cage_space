@@ -364,5 +364,5 @@ cages = [line.rstrip('\n') for line in open('all_cages.txt')]
  # write_png("RCC1d_aligned", 1.3, show_box=False)
  # write_png("RCC1d_aligned", 1.3, show_box=True)
 for cage in cages:
-    write_png(cage + "_aligned", 1.3, show_box=True)
-    write_png(cage + "_aligned", 1.3, show_box=False)
+    write_png(cage + "_final_aligned", 1.3, show_box=True)
+    write_png(cage + "_final_aligned", 1.3, show_box=False)
