@@ -237,6 +237,20 @@ Several cage molecules exhibit a high degree of rotational symmetry, so as to be
 	}% color red end
 	} \label{fig:misaligned}
 \end{figure}
+
+Therefore, the principle axes of inertia are in many cases insufficient to determine an alignment of a porous cage molecule that is unique and robust to small differences. Fig.~\ref{fig:moments_of_inertia} displays the three moments of inertia with respect to the principal axes of inertia for each centered cage, normalized by the largest moment of inertia. Cages with uncolored bars, such as MC1 and MC4, display a significant difference between the three moments of inertia; therefore for these cages, the  principal axes of rotation are a good way to consistently align these cages with similar cages. On the other hand, cages that have colored bars, such as CC1 and CC3, possess moments of inertia that are quite close to one another. We define consecutive moments of inertia to be \emph{practically degenerate} (and color them in Fig.~\ref{fig:moments_of_inertia}) when placing a single carbon atom at the periphery of the molecule in the direction of a principal axis changes the ranking of the principal axes of inertia. i.e., if the moments of inertia differ by less than $12 r^2$ amu-$\angstrom$, where $r$ is the radius of the cage molecule, we decide that the principal axes of inertia do not provide a reasonable method to consistently align the cage with similar cages because small differences can drastically change the orientations.
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{../moments_of_inertia.pdf}
+	\caption{{\color{red} Moments of inertia of the cages about their principal axes of rotation. Each panel corresponds to a different cage. The three bars are the three moments of inertia about the principal axes of rotation (the eigenvalues $\lambda_i$ of the moment of inertia matrix), normalized by the largest moment of inertia. Bars are colored if two consecutive moments of inertia differ by less than $12 r^2$ amu-$\angstrom$, where $r$ is the radius of the cage molecule. Red: all moments of inertia are practically degenerate; blue, green: the first two and last two, respectively, moments of inertia are practically degenerate. For cages with colored bars, the principal axes of inertia do not provide a reasonable method to consistently align the cage with similar cages because small differences can drastically change the orientation.
+	}% color red end
+	} \label{fig:moments_of_inertia}
+\end{figure}
+
+We conclude that the set of cages with practically degenerate principal axes of inertia in Fig.~\ref{fig:moments_of_inertia} cannot be aligned using their principal axes of inertia because these alignments will not be robust to small changes in the structure.
+
+
 } % end color red
 
 \newpage
