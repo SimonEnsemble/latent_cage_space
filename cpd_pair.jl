@@ -26,4 +26,4 @@ end
 R, t, σ², ℓ = CoherentPointDrift.rigid_point_set_registration(x_pt_cld, y_pt_cld, verbose=true,
                         w=0.0, σ²_tol=0.1, q_tol=1.0, max_nb_em_steps=30, print_ending=true)
 
-@save @sprintf("cpd_results/align_%s_to_%s_%d_pts.jld2", cage_y, cage_x, size(x)[2]) R t σ² ℓ cage_y cage_x
+@save @sprintf("cpd_results/align_%s_to_%s_%d_pts.jld2", cage_y, cage_x, size(x_pt_cld)[2]) R t σ² ℓ cage_y cage_x
