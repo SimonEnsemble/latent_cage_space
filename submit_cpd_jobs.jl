@@ -39,14 +39,21 @@ function write_submit_script(cage_y::AbstractString, cage_x::AbstractString)
 end
 
 cages = readdlm("all_cages/all_cages.txt", String)[:];
+@load "rotational_inertia_aligned_cages.jld2"
 
-for (i, cage_i) in enumerate(cages)
-    for (j, cage_j) in enumerate(cages)
+# align cage_y to cage_x
+for (i, cage_y) in enumerate(cages)
+    # no sense in thinking about moving the rotational-inertia-aligned cages.
+    if cage_y in rotational_inertia_aligned_cages
+        @printf("aborting cage_y = %d b/c principal axes of inertia has authority here\n", cage_y)
+        continue
+    end
+    for (j, cage_x) in enumerate(cages)
         if i == j
             continue
         end
-        write_submit_script(cage_i, cage_j)
- #        	run(`qsub submit_script.sh`)
+        write_submit_script(cage_y, cage_x)
+       	run(`qsub submit_script.sh`)
        	sleep(1)
     end
 end
