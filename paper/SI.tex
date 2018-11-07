@@ -387,6 +387,90 @@ Fig.~\ref{fig:cage_space_colored_by_diams_2D} depicts how the 2D embedding (by t
 \newpage
 \clearpage
 
+\section{\color{red}Assessing effects of flexibility in cages} 
+\label{sec:flexibility}
+
+{\color{red}To evaluate how sensitive our methods are to flexibility, four cages (\textbf{CC2}, \textbf{CC3}, \textbf{CC4} and \textbf{CC5}) were allowed to fluctuate at $298$ K in a molecular dynamics (MD) simulation. We considered an isolated cage only. The simulations were performed using GULP v5.0 \cite{julian2003gulp} in the NVT ensemble using the leapfrog Verlet algorithm with the Nose-Hoover thermostat following an initial geometrical optimization of the cage structure. The cage-specific force field (CSFF) was used to model the bond, angle and torsion potentials \cite{holden2012bespoke}; missing parameters were obtained from the polymer consistent force field (PCFF)\todo{Arni, be specific here}. The CSFF was specifically developed to properly describe organic porous cages such as the ones we are working with in this paper. Both Coulombic and Lennard Jones (12-6) potentials were used for interactions between atoms separated by 2 or more atoms in the bonding graph. Partial charges were assigned to the cage atoms using the parameters provided by the (PCFF) \cite{sun1998compass}\cite{holden2012bespoke}. No periodic boundaries were used in these simulations. The equilibration time was $50$ ps while the production time was $1$ ns with a timestep of $0.5$ fs.
+
+We initiated the MD simulation on the aligned cages (as opposed to cage structures taken directly from Miklitz et al. \cite{miklitz2017computational}) rather than going through the process of re-aligning the MD snapshots, due to the excessive computational time required for the Coherent Point Drift algorithm. During the MD simulation, $400$ snapshots of each fluctuating cage were gathered. To help confirm the validity of the simulations, we calculated the window diameter for each snapshot in \textbf{CC3} using \texttt{pywindow} (Fig.~\ref{fig:window_diameter_hist}). Holden et al.\cite{holden2012bespoke} did a similar analysis of \textbf{CC3} window diameter during a MD simulation with the before-mentioned CSFF force field, and our result seems to be in good agreement with theirs.
+
+\begin{figure}
+\centering
+	\includegraphics[width=0.65\columnwidth]{../cc3_histogram.png}
+	\caption{\color{red}A histogram of the window diameters, calculated using \texttt{pywindow}, exhibited by each snapshot of \textbf{CC3} from molecular dynamics simulations described above. All four windows of \textbf{CC3} are included.
+	} \label{fig:window_diameter_hist}
+\end{figure}
+
+We computationally scanned each MD snapshot of the fluctuating cages to generate a 3D porosity image $\mathbf{c}_i$ for each snapshot $i$. We then subtracted off the mean 3D porosity image among the 74 rigid-cage dataset, $\bar{\mathbf{c}}$ to yield $\mathbf{a}_i$.
+To visualize where the 3D porosity images of the fluctuating cages are located in latent space, we do not use t-SNE. If t-SNE were used, we would have to retrain it with the inclusion of the fluctuating cages, which would result in overfitting to the large number of fluctuating cages. That is, t-SNE does not learn an explicit mapping function to project new, unseen data points-- the MD snapshots-- onto the embedding in Fig.~\ref{fig:latent_space}. To illustrate how flexible cages move around latent space as their cavity shapes fluctuate, we adopt the simpler choice to project the cages onto our learned latent space $U_\nu \Sigma_\nu$, but then visualize only the first two latent dimensions. This is equivalent to using a $\nu=2$ dimensional approximant in eqn.~\ref{eq:Anu}, then projecting the MD snapshots of flexible cages onto the $\nu=2$ dimensional latent space. 
+The idea here is to express each 3D porosity image of a snapshot, $\mathbf{a}_i$ as a linear combination of the first two eigencages:
+\begin{equation}
+\mathbf{a}_i^T = \ell_1 v_1^T + \ell_2 v_2^T.
+\end{equation} The weights $\mathbf{\ell}:=[\ell_1 \text{ } \ell_2]$ form the projection of $\mathbf{a}_i$ onto the $\nu=2$-dimensional latent space. We can solve for the weights as $\mathbf{a}_i^T \mathbf{V}_2$, where $mathbf{V}_2 = [\mathbf{v}_i \mathbf{v}_2]$ contains the first two eigencages in its columns.
+
+\begin{figure}
+\centering
+	\includegraphics[width=\columnwidth]{../PCA_latent_cage_space_with_flexible_cages_2D.pdf}
+	\caption{\color{red}The snapshots of the flexible cages \textbf{CC2} (cyan), \textbf{CC3} (orange), \textbf{CC4} (purple) and \textbf{CC5} (maroon) during molecular dynamics simulations are projected onto the first two dimensions of our latent space. Each fluctuating cage resides in a latent \emph{region}, where the size is determined by the different geometrical configurations its cavity is able to sample. \textbf{MC6} is omitted since it is an outlier and stretched the axes on the plot.
+	} \label{fig:pca_space_with_flex}
+\end{figure}
+
+Fig.~\ref{fig:pca_space_with_flex} shows the projections of the MD snapshots in addition to the first two dimensions of the latent representations of the original 74-rigid-cage dataset. All four cages undergo thermal fluctuations and explore a small region of the latent space. 
+In the rigid view of cages, we think about each cage as a point in latent space. In the flexible view of cages, each cage explores a region in latent space. The size and shape of the region is dictated by the distribution of cavity shapes adopted while undergoing thermal fluctuations. Out of the four selected cages, \textbf{CC5} is the largest and most flexible, leading to a larger region of latent space being explored. Comparing the results to \textbf{CC2}, \textbf{CC3} and \textbf{CC4}, they occupy a much smaller region due to the smaller size and more rigid structure.
+
+Note that the region explored by the MD snapshots does not overlap the latent representation of the rigid structure pulled from Miklitz et al. \cite{miklitz2017computational}. The reason is that force field predicts a slightly different minimum-energy structure than the cage pulled from the Cambridge Structural Database by Miklitz et al. \cite{miklitz2017computational}. Regardless, Fig.~\ref{fig:pca_space_with_flex} provides valuable insight, showing how flexible cages explore regions of latent space as their cavity fluctuates.
+}
+%Talk about how the fluctuation might be different if solvent is within the pore? Static/Dynamic 
+
+\clearpage
+
+\section{\color{red}Exploring accessibility of cages to xenon}
+\label{sec:inaccessibility}
+{\color{red}
+During the Henry coefficient calculations, we insert xenon atoms at random positions within a simulation box encompassing the cage molecule. These simulations may insert a xenon atom internal to a cage cavity whose window is too small for xenon to enter. This is an undesirable scenario, since xenon could practically never diffuse into the cavity in practice. Here, we determine which cages have cavities that are inaccessible to a xenon or krypton atom.
+
+To assess if an adsorbate can enter through a window into the cavity of the porous organic cages, we superimposed a grid of points over the cage molecule such that the distance between each adjacent datapoint was $0.1$ \AA. The potential energy of the adsorbate (xenon, krypton) was calculated at each point using a 12-6 Lennard Jones potential. Force field parameters were taken from the Universal Force Field (UFF) and geometric mixing rules were applied (14 \AA cutoff). After the potential energy grid was computed, we assigned an integer value to each point, $-1$ if the energy was above a certain energy value (here $15 \ k_\text{B}T$ where $k_\text{B}$ is the Boltzmann constant and the temperature was taken to be $T = 298 \ \text{K}$), which corresponds to a non-occupiable point, and $1$ if the energy was below that value. 
+Next we see what occupiable points are connected. For every set of connected occupiable points, we relabel them unique values corresponding to a \emph{segment} of occupiable points by applying a flood fill algorithm \cite{martin2012accelerating}. If the center of the cage is occupiable \emph{and} belongs to a different segment than the region outside of the cage, we deem that cage's cavity as \emph{inaccessible}. If this were the case, the xenon adsorbate would have to overcome a prohibitively large energy barrier to percolate through the window and enter the cavity. This catches the undesirable case where Henry coefficients from the simulations have unrealistic contributions from the internal cage cavity despite the adsorbate being unable to percolate into the cavity because the window diameters are too small. 
+%TODO mention thermal fluctuation for this energy barrier talk?
+
+This method was applied to all of the 74 rigid porous organic cages, not taking into consideration that the window can ``breathe''', i.e. fluctuate to allow the adsorbate to enter \cite{miklitz2017computational}. The set of cages deemed to harbor inaccessible cavities to xenon is in Table \ref{tbl:inaccessible}, where the inaccessible cages can be seen along with their maximum window diameter (calculated with \texttt{pywindow}). Note that these xenon-inaccessible cages have maximum window diameters less than the diameter of a xenon atom, which is c.a. 4 \AA, consistent with our method. For these cages, the adsorption is mainly taking place outside of the pore cavity. Miklitz et al.\cite{miklitz2017computational} conducted a similar analysis where they used molecular dynamics to observe the pore breathing and they calculated a pore-limiting envelope (PLE). While our work focused on a static cage structure, their calculation looked at a series of images generated during a MD simulation. Even so, the results don't differ too much. \todo{arni, plz expand} The main\todo{are there other difference? how is there a main difference when we are just looking at the intersection between two sets? or is their study more soft/ not directly labeling a cage as inacccessible?} difference we observed was that we did not notice \textbf{CB6} being inaccessible, but Miklitz et al. reported a significant energy barrier that would hinder diffusion into the cage. Like previously mentioned, we assumed a \ce{Xe} atom could overcome a $<15 \ k_\text{B}T$ energy barrier to enter the cage windows, which might be a reason for this discrepancy.
+
+\begin{table}
+  \caption{\color{red}A list of the cages found to be inaccessible to xenon alongside their maximum window diameter (calculated with \texttt{pywindow}}
+  \label{tbl:inaccessible}
+  \begin{tabular}{lp{3.5cm}}
+    \hline
+    \textbf{Cage}  & \textbf{Maximum window diameter [\AA]}  \\
+    \hline
+    CB5 & $2.334$ \\
+    CP1 & $2.392$ \\
+    CP3 & $2.679$ \\
+    CP4 & $1.495$ \\
+	CP5 & $1.474$ \\
+    HC1 & $3.594$ \\
+    RCC1a & $2.016$ \\
+    RCC1b & $2.180$ \\
+    RCC1c & $2.786$ \\
+	RCC1d & $2.578$ \\
+	WC2 & $2.682$ \\
+	WC3 & $1.578$ \\
+	WC4 & $3.281$ \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\section{\color{red}Adsorption site analysis}
+Here we analyzed the distribution of adsorptions sites of xenon internal and external to the cavity of the cage molecules. We consider any local minimum in the potential energy as a potential adsorption site. We identified potential energy minimia on the basis of a computed potential energy grid as in Sec.~\ref{sec:inaccessibility}. We looked at the 3D array storing the potential energy grid, looped over each each element, and, if no lower values were adjacent to it, stored it as a local minimum. All local minima exhibiting positive energy values (repulsive) were discarded. 
+Fig.~\ref{fig:energy_vs_dist} shows each local energy minimum as a point; the $y$-axis is the value of the potential energy at the local minimum and the $x$-axis is its distance from the center of mass of the cage. For reference, we plotted as a vertical line the radius of the cavity, computed by taking the 2-norm of the vector between the center of mass of the cage and the closest atom and correcting it with the van der Waals radius of the closest atom. This allows us to assess the relative potential energies of the adsorption sites internal to the cavity versus on the periphery or window site of the molecule.}
+
+\begin{figure}
+\centering
+	\includegraphics[width=\columnwidth]{../distance_of_binding_sites.pdf}
+	\caption{{\color{red}Energy of each local potential energy of xenon minima [kJ mol$^{-1}$] plotted against the distance from the center of mass of each cage [\AA]. The red frames correspond to the cages deemed inaccessible by our flood fill algorithm. The cavity diameter is plotted as a vertical, dotted line to give an idea of the relative potential energies of adsorption sites within the cavity versus on the periphery or window site of the cage.}
+	} \label{fig:energy_vs_dist}
+\end{figure}
+
+\clearpage
 
 % see viz.ipynb
 \section{Visualization of the cage structures}
@@ -396,7 +480,6 @@ Larger images of the cages in Fig.~\ref{fig:cages} are shown in Fig.~\ref{fig:al
 
 \newpage
 \clearpage
-
 
 \section{Safety statement}
 As this research is all computational in nature, no unexpected or unusually high safety hazards were encountered.
