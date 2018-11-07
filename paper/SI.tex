@@ -133,7 +133,7 @@
 %% optional argument to \title.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title[SI: Latent Space of Porous Cages]
-  {Supporting Information for: Eigencages: Learning a latent space of porous cages}
+  {Supporting Information for: Eigencages: {\color{red} Learning a latent space of porous cage molecules}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Some journals require a list of abbreviations or keywords to be
@@ -199,7 +199,7 @@
 \newpage
 \clearpage
 
-\section{Aligning the cages before scanning} 
+\section{Aligning the cages before scanning for void space} 
 \label{sec:alignment_details}
 We compute the $3\times 3$ symmetric moment of inertia matrix $\mathbf{I}$ of the cage, defined relative to the center of mass, and find its eigendecomposition $\mathbf{I}=\mathbf{W}\mathbf{\Lambda}\mathbf{W^T}$, with the eigenvalues arranged in a non-increasing order down the diagonal matrix $\mathbf{\Lambda}$ and the orthonormal eigenvectors in the columns of $\mathbf{W}$. {\color{red} The eigenvectors of the matrix $\mathbf{I}$ are the principal axes of inertia, and the associated eigenvalues are the moments of inertia with respect to those axes.} Then, we transform the coordinates of the centered cage by left-multiplying by the rotation matrix $\mathbf{W^T}$. The rotated cage then possesses a diagonal moment of inertia matrix with the moments of inertia arranged in a non-increasing order down the diagonal.
 
@@ -217,7 +217,7 @@ Molecules that exhibit symmetry can possess degenerate moments and principal axe
 
 \begin{figure}
 \centering
-	\includegraphics[width=0.3\columnwidth]{../principal_axes_rotation_failure/SO3_axes_marked.png}
+%	\includegraphics[width=0.3\columnwidth]{../principal_axes_rotation_failure/SO3_axes_marked.png}
 	\caption{{\color{red} Sulfur trioxide (SO$_3$) is a trigonal planar molecule with degenerate principal axes of inertia in the x-y plane.
 	}% color red end
 	} \label{fig:SO3}
@@ -260,7 +260,7 @@ We conclude that the set of cages with practically degenerate principal axes of 
 \begin{figure}
 \centering
 	\includegraphics[width=\columnwidth]{../data_matrix_viz.png}
-	\caption{An attempt at visualizing the structure of the $c \times g^3$ data matrix $\mathbf{A}$. The color depicts the magnitude of the entry of the matrix. This is an ``attempt'' because $g^3>>c$, so the data matrix $\mathbf{A}$ is wide and difficult to visualize without a longer page. Zoom in to see some structure. We remark that 10879/15625 of the columns (representing pixels in the cage cavity images) are all zeros.
+	\caption{An attempt at visualizing the structure of the $c \times g^3$ data matrix $\mathbf{A}$. The color depicts the magnitude of the entry of the matrix. This is an ``attempt'' because $g^3>>c$, so the data matrix $\mathbf{A}$ is wide and difficult to visualize without a longer page. Zoom in to see some structure. We remark that 10879/15625 of the columns (representing pixels in the cage void space images) are all zeros.
 	} \label{fig:data_matrix}
 \end{figure}
 
@@ -342,7 +342,7 @@ Fig.~\ref{fig:cage_space_colored_by_diams_2D} depicts how the 2D embedding (by t
 \begin{figure}
 \centering
 	\includegraphics[width=0.9\columnwidth]{../first_component_captures_pore_diameter.pdf}
-	\caption{The first component of the latent representation of a cage is strongly correlated to its cavity diameter. The cavity diameter was computed by \texttt{pywindow} \cite{miklitz2018pywindow}. In the reconstruction of the 3D cavity image of a given cage, the first component of the latent representation (in the first column of $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$) is the weight on the first eigencage $\mathbf{v}_1$ in the reconstruction of the 3D cage cavity image via eqn.~\ref{eq:latent_space_view}. That the first eigencage is a good descriptor of pore size is suggested by the radial symmetry of the core of the first eigencage in Fig.~\ref{fig:eigencages} that is added to the approximately radially symmetric average cage $\bar{\mathbf{c}}$ to reconstruct the 3D cage cavity image via eqn.~\ref{eq:latent_space_view}.
+	\caption{The first component of the latent representation of a cage is strongly correlated to its cavity diameter. The cavity diameter was computed by \texttt{pywindow} \cite{miklitz2018pywindow}. In the reconstruction of the 3D void space image of a given cage, the first component of the latent representation (in the first column of $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$) is the weight on the first eigencage $\mathbf{v}_1$ in the reconstruction of the 3D void space image via eqn.~\ref{eq:latent_space_view}. That the first eigencage is a good descriptor of pore size is suggested by the radial symmetry of the core of the first eigencage in Fig.~\ref{fig:eigencages} that is added to the approximately radially symmetric average cage $\bar{\mathbf{c}}$ to reconstruct the 3D void space image via eqn.~\ref{eq:latent_space_view}.
 	} \label{fig:first_component_captures_pore_diameter}
 \end{figure}
 
@@ -350,7 +350,7 @@ Fig.~\ref{fig:cage_space_colored_by_diams_2D} depicts how the 2D embedding (by t
 \begin{figure}
 \centering
 	\includegraphics[width=\columnwidth]{../cage_space_colored_by_diams_2D.png}
-	\caption{The 2D embedding (by t-SNE) of the learned latent representation of the 3D cavity images contained in the rows of $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$. Here, the diameter of points represents molecule diameter; color represents cavity diameter, both computed by \texttt{pywindow} \cite{miklitz2018pywindow}. Note that neighbors in latent space tend to have similar cavity and molecule diameters.
+	\caption{The 2D embedding (by t-SNE) of the learned latent representation of the 3D void space images contained in the rows of $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$. Here, the diameter of points represents molecule diameter; color represents cavity diameter, both computed by \texttt{pywindow} \cite{miklitz2018pywindow}. Note that neighbors in latent space tend to have similar cavity and molecule diameters.
 	} \label{fig:cage_space_colored_by_diams_2D}
 \end{figure}
 
@@ -362,7 +362,7 @@ Fig.~\ref{fig:cage_space_colored_by_diams_2D} depicts how the 2D embedding (by t
 \begin{figure}
 \centering
 	\includegraphics[width=\columnwidth]{../cage_space_colored_by_nb_windows.png}
-	\caption{The 2D embedding (by t-SNE) of the learned latent representation of the 3D cavity images contained in the rows of $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$. Here, the color represents the number of windows possessed by the cage molecule. The gas molecules enter the cavity of the cage through the windows. The number of windows is computed by \texttt{pywindow} \cite{miklitz2018pywindow}. Note that cages within clusters in latent space have the same number of windows.
+	\caption{The 2D embedding (by t-SNE) of the learned latent representation of the 3D void space images contained in the rows of $\mathbf{U}_\nu \mathbf{\Sigma}_\nu$. Here, the color represents the number of windows possessed by the cage molecule. The gas molecules enter the cavity of the cage through the windows. The number of windows is computed by \texttt{pywindow} \cite{miklitz2018pywindow}. Note that cages within clusters in latent space have the same number of windows.
 	} \label{fig:cage_space_colored_by_nb_windows}
 \end{figure}
 
@@ -380,52 +380,76 @@ Larger images of the cages in Fig.~\ref{fig:cages} are shown in Fig.~\ref{fig:al
 \clearpage
 
 
-\section{Assessing effects of flexibility in cages}
+\section{\color{red}Assessing effects of flexibility in cages} \label{sec:flexibility}
 
-To evaluate how sensitive our methods are to flexibility, four cages (\textbf{CC2}, \textbf{CC3}, \textbf{CC4} and \textbf{CC5}) were allowed to fluctuate at $298$ K via a molecular dynamics simulation. The simulations were performed using GULP v5.0 \cite{julian2003gulp} in the NVT ensemble using the leapfrog Verlet algorithm with the Nose-Hoover thermostat following an optimization process. The cage-specific force field (CSFF) was used to model the bond, angle and torsion potentials \cite{holden2012bespoke} where missing parameters were obtained from the polymer consistent force field (PCFF). The CSFF was specifically developed to properly describe organic porous cages such as the ones we're working with in this paper. Both coulombic and Lennard Jones (12-6) potentials were used for interactions between atoms separated by 2 or more atoms. Partial charges were assigned using the parameters provided by the (PCFF) \cite{sun1998compass}\cite{holden2012bespoke} . Due to the nature of the porous organic cages, no periodic boundaries were used in these simulations. The equilibration time was $50$ ps while the production time was $1$ ns with a timestep of $0.5$ fs.
+{\color{red}To evaluate how sensitive our methods are to flexibility, four cages (\textbf{CC2}, \textbf{CC3}, \textbf{CC4} and \textbf{CC5}) were allowed to fluctuate at $298$ K via a molecular dynamics simulation. The simulations were performed using GULP v5.0 \cite{julian2003gulp} in the NVT ensemble using the leapfrog Verlet algorithm with the Nose-Hoover thermostat following an optimization process. The cage-specific force field (CSFF) was used to model the bond, angle and torsion potentials \cite{holden2012bespoke} where missing parameters were obtained from the polymer consistent force field (PCFF). The CSFF was specifically developed to properly describe organic porous cages such as the ones we are working with in this paper. Both coulombic and Lennard Jones (12-6) potentials were used for interactions between atoms separated by 2 or more atoms. Partial charges were assigned using the parameters provided by the (PCFF) \cite{sun1998compass}\cite{holden2012bespoke} . Due to the nature of the porous organic cages, no periodic boundaries were used in these simulations. The equilibration time was $50$ ps while the production time was $1$ ns with a timestep of $0.5$ fs.
 
-Aligned cages were used for input coordinates and $400$ snapshots of each fluctuating cage were gathered and analyzed. To determine the validity of this simulation, the window diameter was calculated for each snapshot in \textbf{CC3} using \texttt{pywindow}, see fig \ref{fig:window_diameter_hist}. This is in good agreement with a similar plot made by Holden et al.\cite{holden2012bespoke}, where they used the before-mentioned CSFF force field on \textbf{CC3}.
+Aligned cages were used for input coordinates rather than re-aligning them, due to the excessive computational time required. $400$ snapshots of each fluctuating cage were gathered and analyzed. To determine the validity of this simulation, the window diameter was calculated for each snapshot in \textbf{CC3} using \texttt{pywindow}, see fig \ref{fig:window_diameter_hist}. This is in good agreement with a similar figure made by Holden et al.\cite{holden2012bespoke}, where they used the before-mentioned CSFF force field on \textbf{CC3}.
 
 \begin{figure}
 \centering
 	\includegraphics[width=0.65\columnwidth]{../cc3_histogram.png}
-	\caption{The window diameter was calculated using \texttt{pywindow} for \textbf{CC3} after the molecular dynamic simulation described above. All four windows of \textbf{CC3} are included.
+	\caption{\color{red}The window diameter was calculated using \texttt{pywindow} for \textbf{CC3} after the molecular dynamic simulation described above. All four windows of \textbf{CC3} are included.
 	} \label{fig:window_diameter_hist}
 \end{figure}
 
-In the main text t-SNE was used, but for us to visualize how the fluctuating cages compare in latent space, we need a mapping that learns a mapping function, which t-SNE doesn't. A simple choice is mapping the cages onto the two main principal components using principal component analysis (PCA). Principal components lie along the axes that contribute the most towards the variance, or in other words, the two dimension in the dataset that contribute the most. \textbf{(does that make sense?)}. PCA and singular value decomposition (SVD) is closely related, and we can use the SVD decomposition to map the data onto the two main principal components. By forming and arranging the data from the fluctuating cages the same way as the original cages and subtracting the mean of the original dataset we can use $\mathbf{V_\nu}$ to map the data the new datamatrix $\hat{\mathbf{A}}$ to a 2-dimensional space $\mathbf{Y}$ by choosing $\nu = 2$, where $\mathbf{V}_\nu$ is an orthonormal vector, containing the eigencages that we formed using the original data.
+In the main text t-SNE was used, but for us to visualize how the fluctuating cages compare in latent space, we need a dimension reduction algorithm that learns a mapping function, which t-SNE does not. If t-SNE was used, we would have to include the fluctuating cages in the construction of the latent space and it would overfit to the large amount of fluctuating cages. A simpler choice is mapping the cages onto the two main principal components using principal component analysis (PCA). Principal components lie along the axes that contribute the most towards the variance, or in other words, the two dimension in the dataset that contribute the most. \textbf{(does that make sense?)}. PCA and singular value decomposition (SVD) is closely related, and we can use the SVD decomposition to map the data onto the two main principal components. By forming and arranging the data from the fluctuating cages the same way as the original cages and subtracting the mean of the original dataset we can use $\mathbf{V_\nu}$ to map the new datamatrix $\hat{\mathbf{A}}$ to a 2-dimensional space $\mathbf{Y}$ by choosing $\nu = 2$, where $\mathbf{V}_\nu$ is the orthonormal vector, containing the eigencages that we formed using the original data.
 
 \begin{equation}
-\hat{\mathbf{A}} \mathbf{V}_\nu = \mathbf{Y}
+\hat{\mathbf{A}} \mathbf{V}_{\nu=2} = \mathbf{Y} = U_{\nu=2}\Sigma_{\nu=2}
 \label{eq:pca}
 \end{equation}
 
 \begin{figure}
 \centering
 	\includegraphics[width=\columnwidth]{../PCA_latent_cage_space_with_flexible_cages_2D.pdf}
-	\caption{The cages mapped to the two main principal components. \textbf{CC2} (cyan), \textbf{CC3} (orange), \textbf{CC4} (purple) and \textbf{CC5} (maroon) were allowed to fluctuage in a molecular dynamic simulation. \textbf{MC6} has been left out of the plot for visualization reasons.
+	\caption{\color{red}The cages mapped to the two main principal components. \textbf{CC2} (cyan), \textbf{CC3} (orange), \textbf{CC4} (purple) and \textbf{CC5} (maroon) were allowed to fluctuage in a molecular dynamic simulation. Each fluctuating cage resides in a latent basin, where the size is determined by the different geometrical configurations it's able to sample. \textbf{MC6} has been left out of the plot for visualization reasons.
 	} \label{fig:pca_space_with_flex}
 \end{figure}
 
-On figure \ref{fig:pca_space_with_flex} the fluctuating snapshots can be seen. For all four cages, after fluctuating they move away from the original location. This is probably due to the static structure not being favorable considering the interactions accounted for in the molecular dynamic simulation. This figure does provide valuable insight, as in reality, each cage is able to fluctuate due to environmental factors. Instead of thinking about each cage as a point in latent space, it moves around and follows a distribution determined by its' geometry. Out of the four selected cages, \textbf{CC5} is the largest and most flexible, leading to more configurations being explored. This seems to lead to the cage occupying a larger region in the two-dimensional representation. Comparing the results to \textbf{CC2}, \textbf{CC3} and \textbf{CC4}, they occupy a much smaller region due to the smaller size and more rigid structure.
+On figure \ref{fig:pca_space_with_flex} the fluctuating snapshots can be seen. For all four cages, after fluctuating they move away from the original location and occupy a latent basin. This is probably due to the static structure optimization. Prior to the MD simulation the static structure is relaxed, such that the potential energy of the cage reaches a (local) minimum. Regardless, the figure does provide valuable insight, showing that each cage is able to fluctuate due to thermal fluctuations. Instead of thinking about each cage as a point in latent space, it moves around in a basin that follows a distribution determined by its' geometry. Out of the four selected cages, \textbf{CC5} is the largest and most flexible, leading to more configurations being explored. This seems to lead to the cage occupying a larger basin in the two-dimensional representation. Comparing the results to \textbf{CC2}, \textbf{CC3} and \textbf{CC4}, they occupy a much smaller basin due to the smaller size and more rigid structure.}
 %Talk about how the fluctuation might be different if solvent is within the pore? Static/Dynamic 
 
 \clearpage
 
-\section{Exploring accessibility of cages}
-To assess if the porous organic cages were able to contain a \ce{Xe} atom, a fine grid of $101^3$ datapoints (with a distance of $0.4$ \AA between adjacent points) was overlaid on top of each cage. The potential energy was calculated at each point using a 12-6 Lennard Jones potential. Force field parameters were taken from the Universal Force Field (UFF) and Lorentz-Berthelot mixing rules were applied. When the potential energy grid was ready, we assigned an integer value to each point, $-1$ if the energy was above a certain energy value (here $15 \ k_\text{B}T$ where $k_\text{B}$ is the Boltzmann constant), which corresponds to a non-occupiable point, and $1$ if the energy was below that value. Next we see what occupiable points are connected and relabel the values in the grid to correspond to the newly-formed segments. If the center of the cage is non-occupiable or belongs to a different segment than the area outside of the cage, we deem that cage inaccessible. Otherwise we postulate that a \ce{Xe} atom can adsorb within the cage, given that it can overcome an energy barrier of $15 \ k_\text{B}T$.
+\section{\color{red}Exploring accessibility of cages}
+{\color{red}To assess if the porous organic cages were able to contain a \ce{Xe} atom, a grid was constructed such that the distance between each adjacent datapoint was $0.1$ \AA. The potential energy was calculated at each point using a 12-6 Lennard Jones potential. Force field parameters were taken from the Universal Force Field (UFF) and Lorentz-Berthelot mixing rules were applied. When the potential energy grid was ready, we assigned an integer value to each point, $-1$ if the energy was above a certain energy value (here $15 \ k_\text{B}T$ where $k_\text{B}$ is the Boltzmann constant), which corresponds to a non-occupiable point, and $1$ if the energy was below that value. Next we see what occupiable points are connected and relabel the values in the grid to correspond to the newly-formed segments. If the center of the cage is non-occupiable or belongs to a different segment than the area outside of the cage, we deem that cage inaccessible. Otherwise we postulate that a \ce{Xe} atom can adsorb within the cage, given that it can overcome an energy barrier of $15 \ k_\text{B}T$.
 %TODO mention thermal fluctuation for this energy barrier talk?
 
-This method was applied to a static image of all the porous organic cages, not taking into consideration that the pore can "breath", where the window diameter can fluctuate significantly \cite{miklitz2017computational}. Nevertheless, our results show that the following cages are inaccessible for \ce{Xe} atoms: \textbf{CP1}, \textbf{CP3}, \textbf{CP4}, \textbf{CP5}, \textbf{WC2}, \textbf{WC3}, \textbf{WC4}, \textbf{HC1}, \textbf{CB5}, \textbf{RCC1a}, \textbf{RCC1b}, \textbf{RCC1c}, \textbf{RCC1d} and \textbf{RCC3b}. For these cages, the adsorption is mainly taking place outside of the pore cavity. Miklitz et al.\cite{miklitz2017computational} conducted a similar analysis where they used molecular dynamics to observe the pore breathing and they calculated a pore-limiting envelope (PLE) using \texttt{pywindow}. While our work focused on a static image of each cage, their calculation looked at a series of images. Even so, the results don't differ too much. The main difference we observed was that we did not exclude \textbf{CB6}, but Miklitz et al. reported a significant energy barrier that would hinder diffusion into the cage. Like previously mentioned, we assumed a \ce{Xe} atom could overcome a $15 \ k_\text{B}T$ energy barrier, which might be a reason for this discrepancy.
+This method was applied to a static image of all the porous organic cages, not taking into consideration that the pore can "breath", where the window diameter can fluctuate significantly \cite{miklitz2017computational}. Our results can be seen in Table \ref{tbl:inaccessible} with the maximum window diameter, calculated with \texttt{pywindow}. For these cages, the adsorption is mainly taking place outside of the pore cavity. Miklitz et al.\cite{miklitz2017computational} conducted a similar analysis where they used molecular dynamics to observe the pore breathing and they calculated a pore-limiting envelope (PLE) using \texttt{pywindow}. While our work focused on a static image of each cage, their calculation looked at a series of images. Even so, the results don't differ too much. The main difference we observed was that we did not exclude \textbf{CB6}, but Miklitz et al. reported a significant energy barrier that would hinder diffusion into the cage. Like previously mentioned, we assumed a \ce{Xe} atom could overcome a $15 \ k_\text{B}T$ energy barrier, which might be a reason for this discrepancy.
 %TODO Make this cage list look nicer. This look really ugly...
 
+\begin{table}
+  \caption{\color{red}A list of the inaccessible cages alongside their maximum window diameter (calculated with \texttt{pywindow}}
+  \label{tbl:inaccessible}
+  \begin{tabular}{lp{3.5cm}}
+    \hline
+    \textbf{Cage}  & \textbf{Maximum window diameter [\AA]}  \\
+    \hline
+    CB5 & $2.334$ \\
+    CP1 & $2.392$ \\
+    CP3 & $2.679$ \\
+    CP4 & $1.495$ \\
+	CP5 & $1.474$ \\
+    HC1 & $3.594$ \\
+    RCC1a & $2.016$ \\
+    RCC1b & $2.180$ \\
+    RCC1c & $2.786$ \\
+	RCC1d & $2.578$ \\
+	WC2 & $2.682$ \\
+	WC3 & $1.578$ \\
+	WC4 & $3.281$ \\
+    \hline
+  \end{tabular}
+\end{table}
 
-Figuring out where the adsorption takes place in the accessible cages is another issue. Like previously, a grid was overlaid on the cages and the energy calculated. Next local minima was found in the resulting energy tensor by sampling each element of the grid and ensuring no lower values were adjacent to it. Positive local minima were discarded. The void radius was calculated by taking the 2-norm of the vector between the center of mass of the cage and the closest atom and correcting it with the van der Waals radius of the closest atom. On figure \ref{fig:energy_vs_dist} the energy corresponding to each local minima is plotted against the distance from the center of mass of each cage.
+
+Figuring out where the adsorption takes place in the accessible cages is another issue. Like previously, a grid was overlaid on the cages and the energy calculated. Next local minima was found in the resulting energy tensor by sampling each element of the grid and ensuring no lower values were adjacent to it. Positive local minima were discarded. The void radius was calculated by taking the 2-norm of the vector between the center of mass of the cage and the closest atom and correcting it with the van der Waals radius of the closest atom. On figure \ref{fig:energy_vs_dist} the energy corresponding to each local minima is plotted against the distance from the center of mass of each cage.}
 
 \begin{figure}
 \centering
 	\includegraphics[width=\columnwidth]{../distance_of_binding_sites.pdf}
-	\caption{Energy of each local minima [kJ mol$^{-1}$] plotted against the distance from the center of mass of each cage [\AA]. The red frames correspond to the cages deemed inaccessible by our methods. The void diameter is plotted as a dotted line to give a better idea what's inside and outside of the cage.
+	\caption{{\color{red}Energy of each local minima [kJ mol$^{-1}$] plotted against the distance from the center of mass of each cage [\AA]. The red frames correspond to the cages deemed inaccessible by our methods. The void diameter is plotted as a dotted line to give a better idea what's inside and outside of the cage.}
 	} \label{fig:energy_vs_dist}
 \end{figure}
 
