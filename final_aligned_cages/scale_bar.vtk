@@ -1,0 +1,10 @@
+# vtk DataFile Version 2.0
+unit cell boundary
+
+ASCII
+DATASET POLYDATA
+POINTS 2 double
+247.000 369.100 0.001
+257.000 369.100 0.001
+LINES 1 3
+2 0 1
