@@ -1,0 +1,539 @@
+md conv opti mole 
+
+# Cartesian coordinates of CC2. Last column are partial charges, calculated using the scheme presented by H. Sun [doi:10.1021/jp980939v]
+cartesian 150
+N    core  -0.220000   -3.728000   -4.547000   -0.600000
+N    core  -0.460000   -5.513000   -2.005000   -0.600000
+N    core  -3.466000   -3.403000    3.321000   -0.600000
+N    core   2.982000   -3.910000    3.232000   -0.600000
+C2   core   0.322000   -1.371000   -4.532000    0.000000
+C2   core  -1.021000   -0.957000   -4.535000   -0.126800
+H    core  -1.815000   -1.694000   -4.509000    0.126800
+C3   core   0.683000   -2.800000   -4.446000    0.173200
+H    core   1.718000   -3.068000   -4.264000    0.126800
+C2   core  -0.767000   -4.677000    0.244000    0.000000
+C2   core   0.607000   -4.676000    0.542000   -0.126800
+H    core   1.325000   -4.970000   -0.215000    0.126800
+C2   core   1.065000   -4.260000    1.800000    0.000000
+C2   core   0.135000   -3.851000    2.771000   -0.126800
+H    core   0.479000   -3.505000    3.739000    0.126800
+C2   core  -1.239000   -3.846000    2.488000    0.000000
+C2   core  -1.683000   -4.266000    1.223000   -0.126800
+H    core  -2.741000   -4.245000    0.986000    0.126800
+C3   core  -1.259000   -5.027000   -1.103000    0.173200
+H    core  -2.300000   -4.842000   -1.344000    0.126800
+C3   core   2.517000   -4.187000    2.052000    0.173200
+H    core   3.199000   -4.337000    1.222000    0.126800
+C3   core  -2.182000   -3.328000    3.498000    0.173200
+H    core  -1.785000   -2.848000    4.387000    0.126800
+C1   core   0.080000   -5.148000   -4.368000    0.247000
+H    core   1.130000   -5.304000   -4.022000    0.053000
+C1   core  -0.884000   -5.779000   -3.379000    0.247000
+H    core  -1.918000   -5.402000   -3.568000    0.053000
+C1   core  -0.837000   -7.264000   -3.706000   -0.106000
+H    core  -1.802000   -7.757000   -3.458000    0.053000
+H    core  -0.018000   -7.760000   -3.138000    0.053000
+C1   core  -0.540000   -7.343000   -5.206000   -0.106000
+H    core  -1.443000   -7.676000   -5.763000    0.053000
+H    core   0.285000   -8.064000   -5.396000    0.053000
+C1   core  -0.134000   -5.936000   -5.652000   -0.106000
+H    core   0.793000   -5.958000   -6.265000    0.053000
+H    core  -0.956000   -5.484000   -6.251000    0.053000
+C1   core   4.408000   -3.730000    3.500000    0.247000
+H    core   5.006000   -3.740000    2.558000    0.053000
+C1   core   4.947000   -4.804000    4.433000   -0.106000
+H    core   5.306000   -5.686000    3.860000    0.053000
+H    core   4.156000   -5.130000    5.146000    0.053000
+C1   core   6.088000   -4.139000    5.206000   -0.106000
+H    core   7.070000   -4.535000    4.865000    0.053000
+H    core   5.981000   -4.338000    6.295000    0.053000
+C1   core  -4.431000   -2.814000    4.247000    0.247000
+H    core  -3.924000   -2.205000    5.033000    0.053000
+C1   core  -5.283000   -3.876000    4.926000   -0.106000
+H    core  -4.805000   -4.231000    5.864000    0.053000
+H    core  -5.436000   -4.743000    4.245000    0.053000
+N    core   3.339000    1.674000   -4.547000   -0.600000
+N    core   5.005000    2.358000   -2.005000   -0.600000
+N    core   4.680000   -1.300000    3.321000   -0.600000
+N    core   1.895000    4.538000    3.231000   -0.600000
+C2   core   1.027000    0.964000   -4.532000    0.000000
+C2   core   1.339000   -0.406000   -4.535000   -0.126800
+H    core   2.375000   -0.725000   -4.509000    0.126800
+C3   core   2.084000    1.991000   -4.446000    0.173200
+H    core   1.798000    3.021000   -4.264000    0.126800
+C2   core   4.434000    1.675000    0.244000    0.000000
+C2   core   3.746000    2.863000    0.541000   -0.126800
+H    core   3.641000    3.632000   -0.215000    0.126800
+C2   core   3.157000    3.052000    1.800000    0.000000
+C2   core   3.268000    2.042000    2.771000   -0.126800
+H    core   2.796000    2.168000    3.739000    0.126800
+C2   core   3.951000    0.850000    2.488000    0.000000
+C2   core   4.536000    0.675000    1.223000   -0.126800
+H    core   5.046000   -0.251000    0.986000    0.126800
+C3   core   4.983000    1.424000   -1.103000    0.173200
+H    core   5.343000    0.429000   -1.344000    0.126800
+C3   core   2.367000    4.274000    2.051000    0.173200
+H    core   2.157000    4.940000    1.221000    0.126800
+C3   core   3.973000   -0.226000    3.498000    0.173200
+H    core   3.359000   -0.121000    4.387000    0.126800
+C1   core   4.419000    2.643000   -4.369000    0.247000
+H    core   4.028000    3.630000   -4.023000    0.053000
+C1   core   5.447000    2.124000   -3.379000    0.247000
+H    core   5.637000    1.040000   -3.568000    0.053000
+C1   core   6.709000    2.907000   -3.707000   -0.106000
+H    core   7.619000    2.317000   -3.458000    0.053000
+H    core   6.730000    3.864000   -3.139000    0.053000
+C1   core   6.629000    3.203000   -5.206000   -0.106000
+H    core   7.369000    2.588000   -5.764000    0.053000
+H    core   6.841000    4.278000   -5.396000    0.053000
+C1   core   5.208000    2.851000   -5.652000   -0.106000
+H    core   4.763000    3.665000   -6.266000    0.053000
+H    core   5.228000    1.913000   -6.251000    0.053000
+C1   core   1.026000    5.683000    3.500000    0.247000
+H    core   0.736000    6.205000    2.557000    0.053000
+C1   core   1.687000    6.686000    4.433000   -0.106000
+H    core   2.271000    7.438000    3.859000    0.053000
+H    core   2.365000    6.165000    5.145000    0.053000
+C1   core   0.540000    7.343000    5.206000   -0.106000
+H    core   0.392000    8.391000    4.865000    0.053000
+H    core   0.766000    7.349000    6.295000    0.053000
+C1   core   4.653000   -2.430000    4.248000    0.247000
+H    core   3.871000   -2.295000    5.033000    0.053000
+C1   core   5.998000   -2.637000    4.926000   -0.106000
+H    core   6.066000   -2.045000    5.865000    0.053000
+H    core   6.826000   -2.336000    4.245000    0.053000
+N    core  -3.119000    2.054000   -4.547000   -0.600000
+N    core  -4.544000    3.155000   -2.005000   -0.600000
+N    core  -1.215000    4.703000    3.320000   -0.600000
+N    core  -4.877000   -0.628000    3.231000   -0.600000
+C2   core  -1.348000    0.407000   -4.532000    0.000000
+C2   core  -0.318000    1.363000   -4.535000   -0.126800
+H    core  -0.559000    2.419000   -4.509000    0.126800
+C3   core  -2.766000    0.809000   -4.446000    0.173200
+H    core  -3.515000    0.046000   -4.264000    0.126800
+C2   core  -3.667000    3.003000    0.243000    0.000000
+C2   core  -4.353000    1.813000    0.541000   -0.126800
+H    core  -4.966000    1.337000   -0.216000    0.126800
+C2   core  -4.222000    1.208000    1.800000    0.000000
+C2   core  -3.402000    1.809000    2.771000   -0.126800
+H    core  -3.276000    1.338000    3.739000    0.126800
+C2   core  -2.712000    2.996000    2.488000    0.000000
+C2   core  -2.853000    3.591000    1.222000   -0.126800
+H    core  -2.306000    4.496000    0.985000    0.126800
+C3   core  -3.724000    3.604000   -1.104000    0.173200
+H    core  -3.043000    4.413000   -1.344000    0.126800
+C3   core  -4.885000   -0.087000    2.051000    0.173200
+H    core  -5.356000   -0.602000    1.221000    0.126800
+C3   core  -1.791000    3.554000    3.498000    0.173200
+H    core  -1.575000    2.970000    4.386000    0.126800
+C1   core  -4.498000    2.505000   -4.369000    0.247000
+H    core  -5.158000    1.673000   -4.023000    0.053000
+C1   core  -4.563000    3.655000   -3.379000    0.247000
+H    core  -3.719000    4.362000   -3.568000    0.053000
+C1   core  -5.872000    4.357000   -3.707000   -0.106000
+H    core  -5.816000    5.439000   -3.459000    0.053000
+H    core  -6.711000    3.896000   -3.139000    0.053000
+C1   core  -6.088000    4.139000   -5.206000   -0.106000
+H    core  -5.926000    5.087000   -5.764000    0.053000
+H    core  -7.125000    3.785000   -5.397000    0.053000
+C1   core  -5.073000    3.084000   -5.653000   -0.106000
+H    core  -5.555000    2.292000   -6.266000    0.053000
+H    core  -4.271000    3.570000   -6.252000    0.053000
+C1   core  -5.434000   -1.953000    3.500000    0.247000
+H    core  -5.742000   -2.465000    2.557000    0.053000
+C1   core  -6.634000   -1.882000    4.433000   -0.106000
+H    core  -7.577000   -1.752000    3.859000    0.053000
+H    core  -6.521000   -1.034000    5.145000    0.053000
+C1   core  -6.629000   -3.203000    5.206000   -0.106000
+H    core  -7.463000   -3.856000    4.865000    0.053000
+H    core  -6.748000   -3.010000    6.295000    0.053000
+C1   core  -0.222000    5.245000    4.247000    0.247000
+H    core   0.052000    4.500000    5.033000    0.053000
+C1   core  -0.715000    6.514000    4.925000   -0.106000
+H    core  -1.262000    6.277000    5.864000    0.053000
+H    core  -1.390000    7.080000    4.244000    0.053000
+
+# Number of species. There are three carbon species: C1 (generic sp3 hybridized carbon), C2 (sp2 hybridized aromatic carbon) and C3 (nonaromatic end doubly bonded carbon)
+# As was described by Holden et al. [doi:10.1021/jp305129w]
+species    5
+H    core
+N    core
+C1   core
+C2   core
+C3   core
+
+# A list of bonds in the cage
+connect     1     8    0 0 0
+connect     1    25    0 0 0
+connect     2    19    0 0 0
+connect     2    27    0 0 0
+connect     3    23    0 0 0
+connect     3    46    0 0 0
+connect     4    21    0 0 0
+connect     4    38    0 0 0
+connect     5     6    0 0 0
+connect     5     8    0 0 0
+connect     5    56    0 0 0
+connect     6     7    0 0 0
+connect     6   105    0 0 0
+connect     8     9    0 0 0
+connect    10    11    0 0 0
+connect    10    17    0 0 0
+connect    10    19    0 0 0
+connect    11    12    0 0 0
+connect    11    13    0 0 0
+connect    13    14    0 0 0
+connect    13    21    0 0 0
+connect    14    15    0 0 0
+connect    14    16    0 0 0
+connect    16    17    0 0 0
+connect    16    23    0 0 0
+connect    17    18    0 0 0
+connect    19    20    0 0 0
+connect    21    22    0 0 0
+connect    23    24    0 0 0
+connect    25    26    0 0 0
+connect    25    27    0 0 0
+connect    25    35    0 0 0
+connect    27    28    0 0 0
+connect    27    29    0 0 0
+connect    29    30    0 0 0
+connect    29    31    0 0 0
+connect    29    32    0 0 0
+connect    32    33    0 0 0
+connect    32    34    0 0 0
+connect    32    35    0 0 0
+connect    35    36    0 0 0
+connect    35    37    0 0 0
+connect    38    39    0 0 0
+connect    38    40    0 0 0
+connect    38    96    0 0 0
+connect    40    41    0 0 0
+connect    40    42    0 0 0
+connect    40    43    0 0 0
+connect    43    44    0 0 0
+connect    43    45    0 0 0
+connect    43    98    0 0 0
+connect    46    47    0 0 0
+connect    46    48    0 0 0
+connect    46   138    0 0 0
+connect    48    49    0 0 0
+connect    48    50    0 0 0
+connect    48   143    0 0 0
+connect    51    58    0 0 0
+connect    51    75    0 0 0
+connect    52    69    0 0 0
+connect    52    77    0 0 0
+connect    53    73    0 0 0
+connect    53    96    0 0 0
+connect    54    71    0 0 0
+connect    54    88    0 0 0
+connect    55    56    0 0 0
+connect    55    58    0 0 0
+connect    55   106    0 0 0
+connect    56    57    0 0 0
+connect    58    59    0 0 0
+connect    60    61    0 0 0
+connect    60    67    0 0 0
+connect    60    69    0 0 0
+connect    61    62    0 0 0
+connect    61    63    0 0 0
+connect    63    64    0 0 0
+connect    63    71    0 0 0
+connect    64    65    0 0 0
+connect    64    66    0 0 0
+connect    66    67    0 0 0
+connect    66    73    0 0 0
+connect    67    68    0 0 0
+connect    69    70    0 0 0
+connect    71    72    0 0 0
+connect    73    74    0 0 0
+connect    75    76    0 0 0
+connect    75    77    0 0 0
+connect    75    85    0 0 0
+connect    77    78    0 0 0
+connect    77    79    0 0 0
+connect    79    80    0 0 0
+connect    79    81    0 0 0
+connect    79    82    0 0 0
+connect    82    83    0 0 0
+connect    82    84    0 0 0
+connect    82    85    0 0 0
+connect    85    86    0 0 0
+connect    85    87    0 0 0
+connect    88    89    0 0 0
+connect    88    90    0 0 0
+connect    88   146    0 0 0
+connect    90    91    0 0 0
+connect    90    92    0 0 0
+connect    90    93    0 0 0
+connect    93    94    0 0 0
+connect    93    95    0 0 0
+connect    93   148    0 0 0
+connect    96    97    0 0 0
+connect    96    98    0 0 0
+connect    98    99    0 0 0
+connect    98   100    0 0 0
+connect   101   108    0 0 0
+connect   101   125    0 0 0
+connect   102   119    0 0 0
+connect   102   127    0 0 0
+connect   103   123    0 0 0
+connect   103   146    0 0 0
+connect   104   121    0 0 0
+connect   104   138    0 0 0
+connect   105   106    0 0 0
+connect   105   108    0 0 0
+connect   106   107    0 0 0
+connect   108   109    0 0 0
+connect   110   111    0 0 0
+connect   110   117    0 0 0
+connect   110   119    0 0 0
+connect   111   112    0 0 0
+connect   111   113    0 0 0
+connect   113   114    0 0 0
+connect   113   121    0 0 0
+connect   114   115    0 0 0
+connect   114   116    0 0 0
+connect   116   117    0 0 0
+connect   116   123    0 0 0
+connect   117   118    0 0 0
+connect   119   120    0 0 0
+connect   121   122    0 0 0
+connect   123   124    0 0 0
+connect   125   126    0 0 0
+connect   125   127    0 0 0
+connect   125   135    0 0 0
+connect   127   128    0 0 0
+connect   127   129    0 0 0
+connect   129   130    0 0 0
+connect   129   131    0 0 0
+connect   129   132    0 0 0
+connect   132   133    0 0 0
+connect   132   134    0 0 0
+connect   132   135    0 0 0
+connect   135   136    0 0 0
+connect   135   137    0 0 0
+connect   138   139    0 0 0
+connect   138   140    0 0 0
+connect   140   141    0 0 0
+connect   140   142    0 0 0
+connect   140   143    0 0 0
+connect   143   144    0 0 0
+connect   143   145    0 0 0
+connect   146   147    0 0 0
+connect   146   148    0 0 0
+connect   148   149    0 0 0
+connect   148   150    0 0 0
+
+# Lennard-Jones potentials. Parameters given in epsilon [eV] and sigma [Angstrom] values. 
+# Lorentz-Berthelot mixing rules have already been applied. The `x13` tag means that we exclude atoms that are separated by less than 4 atoms.
+lennard epsilon 12 6 intra x13
+C1   core    C1   core    0.004553    3.430851    0.000000    14.000000
+lennard epsilon 12 6 intra x13
+C2   core    C2   core    0.004553    3.430851    0.000000    14.000000
+lennard epsilon 12 6 intra x13
+C3   core    C3   core    0.004553    3.430851    0.000000    14.000000
+lennard epsilon 12 6 intra x13
+C1   core    C2   core    0.004553    3.430851    0.000000    14.000000
+lennard epsilon 12 6 intra x13
+C1   core    C3   core    0.004553    3.430851    0.000000    14.000000
+lennard epsilon 12 6 intra x13
+C2   core    C3   core    0.004553    3.430851    0.000000    14.000000
+lennard epsilon 12 6 intra x13
+H    core    C1   core    0.002947    3.000992    0.000000    14.000000
+lennard epsilon 12 6 intra x13
+H    core    C2   core    0.002947    3.000992    0.000000    14.000000
+lennard epsilon 12 6 intra x13
+H    core    C3   core    0.002947    3.000992    0.000000    14.000000
+lennard epsilon 12 6 intra x13
+H    core    N    core    0.002389    2.915912    0.000000    14.000000
+lennard epsilon 12 6 intra x13
+H    core    H    core    0.001908    2.571134    0.000000    14.000000
+lennard epsilon 12 6 intra x13
+N    core    N    core    0.002992    3.260689    0.000000    14.000000
+lennard epsilon 12 6 intra x13
+N    core    C1   core    0.003691    3.345770    0.000000    14.000000
+lennard epsilon 12 6 intra x13
+N    core    C2   core    0.003691    3.345770    0.000000    14.000000
+lennard epsilon 12 6 intra x13
+N    core    C3   core    0.003691    3.345770    0.000000    14.000000
+
+# Coulomb interactions. Uses the partial charges mentioned above. Here direct summation is used (no PBC)
+coulomb intra x13
+C1   core    C1   core    14.000000
+coulomb intra x13
+C1   core    C2   core    14.000000
+coulomb intra x13
+C1   core    C3   core    14.000000
+coulomb intra x13
+C1   core    N    core    14.000000
+coulomb intra x13
+C1   core    H    core    14.000000
+coulomb intra x13
+C2   core    C2   core    14.000000
+coulomb intra x13
+C2   core    C3   core    14.000000
+coulomb intra x13
+C2   core    N    core    14.000000
+coulomb intra x13
+C2   core    H    core    14.000000
+coulomb intra x13
+C3   core    C3   core    14.000000
+coulomb intra x13
+C3   core    N    core    14.000000
+coulomb intra x13
+C3   core    H    core    14.000000
+coulomb intra x13
+N    core    N    core    14.000000
+coulomb intra x13
+N    core    H    core    14.000000
+coulomb intra x13
+H    core    H    core    14.000000
+
+# Harmonic bond potentials. Parameters were taken from the Cage Specific Force Field (CSFF)
+harmonic k3 k4 bond
+C2   core    C2   core    40.352553  -320.225808  1519.870080    1.3838
+harmonic k3 k4 bond
+C2   core    H    core    36.591448  -270.293478  1248.808557    1.0787
+harmonic k3 k4 bond
+C3   core    C2   core    30.684712  -192.954574   975.098227    1.4556
+harmonic k3 k4 bond
+C3   core    H    core    31.722667  -188.776077   813.512822    1.1005
+harmonic k3 k4 bond
+C3   core    N    core    65.749219  -435.812986  2240.729217    1.2700
+harmonic k3 k4 bond
+C1   core    N    core    28.160891   -56.720735  3153.464713    1.4329
+harmonic k3 k4 bond
+C1   core    H    core    29.921489  -180.020685   879.015279    1.1010
+harmonic k3 k4 bond
+C1   core    C1   core    21.699584  -130.926027   417.235645    1.5360
+
+# Three-body angle potentials. First atom listed is the pivot atom, and the angle is defined as the angle between atom 2 and 3.
+three k3 k4 bond
+C2   core    C2   core    H    core  3.049026  -3.244062   0.000000   117.9400
+three k3 k4 bond
+C2   core    C2   core    C2   core  5.379155  -0.258392   0.000000   119.9000
+three k3 k4 bond
+C2   core    C3   core    C2   core  3.220341   0.169382   1.373787   115.4201
+three k3 k4 bond
+C3   core    C2   core    H    core  2.732300  -2.892601 -10.841466   117.4110
+three k3 k4 bond
+C3   core    C2   core    N    core  4.943550  -5.398045  39.847409   123.6700
+three k3 k4 bond
+C3   core    H    core    N    core  2.948784  -2.341682 -15.611211   122.0000
+three k3 k4 bond
+N    core    C3   core    C1   core  5.021606 -17.432545  53.806746   110.5000
+three k3 k4 bond
+C1   core    C1   core    N    core  4.635064 -15.351025   0.000000   110.0047
+three k3 k4 bond
+C1   core    H    core    N    core  3.124384   0.261019   0.000000   109.7000
+three k3 k4 bond
+C1   core    C1   core    H    core  3.248259  -2.759021   5.337994   109.7700
+# The following parameters were taken from PCFF
+three k3 k4 bond
+C1   core    H    core    H    core  3.438022  -3.361874  -2.530890   107.6600
+
+# Four-body torsion potentials. Parameters were taken from the CSFF except where explicitly stated
+torsion bond
+H    core   C2   core   C2   core   H    core    0.195140   -1   0.0
+torsion bond
+H    core   C2   core   C2   core   H    core    0.081391   -2   0.0
+torsion bond
+H    core   C2   core   C2   core   H    core    0.000000   -3   0.0
+torsion bond
+C2   core   C2   core   C2   core   H    core   -0.303551   -1   0.0
+torsion bond
+C2   core   C2   core   C2   core   H    core    0.089595   -2   0.0
+torsion bond
+C2   core   C2   core   C2   core   H    core    0.000000   -3   0.0
+torsion bond
+C2   core   C2   core   C2   core   C2   core    0.362818   -1   0.0
+torsion bond
+C2   core   C2   core   C2   core   C2   core    0.181836   -2   0.0
+torsion bond
+C2   core   C2   core   C2   core   C2   core    0.000000   -3   0.0
+torsion bond
+C3   core   C2   core   C2   core   C2   core   -0.130093   -1   0.0
+torsion bond
+C3   core   C2   core   C2   core   C2   core    0.143415   -2   0.0
+torsion bond
+C3   core   C2   core   C2   core   C2   core    0.042064   -3   0.0
+torsion bond
+C3   core   C2   core   C2   core   H    core    0.303551   -1   0.0
+torsion bond
+C3   core   C2   core   C2   core   H    core    0.108723   -2   0.0
+torsion bond
+C3   core   C2   core   C2   core   H    core    0.000000   -3   0.0
+torsion bond
+H    core   C3   core   C2   core   C2   core    0.043364   -1   0.0
+torsion bond
+H    core   C3   core   C2   core   C2   core    0.048122   -2   0.0
+torsion bond
+H    core   C3   core   C2   core   C2   core    0.000000   -3   0.0
+torsion bond
+C2   core   C2   core   C3   core   N    core    0.000000   -1   0.0
+torsion bond
+C2   core   C2   core   C3   core   N    core    0.043364   -2   0.0
+torsion bond
+C2   core   C2   core   C3   core   N    core    0.000000   -3   0.0
+torsion bond
+C1   core   N    core   C3   core   C2   core   -0.043364   -1   0.0
+torsion bond
+C1   core   N    core   C3   core   C2   core    0.342579   -2   0.0
+torsion bond
+C1   core   N    core   C3   core   C2   core   -0.034692   -3   0.0
+torsion bond
+C3   core   N    core   C1   core   H    core    0.062011   -1   0.0
+torsion bond
+C3   core   N    core   C1   core   H    core   -0.048568   -2   0.0
+torsion bond
+C3   core   N    core   C1   core   H    core    0.037419   -3   0.0
+torsion bond
+C3   core   N    core   C1   core   C1   core    0.034692   -1   0.0
+torsion bond
+C3   core   N    core   C1   core   C1   core    0.001735   -2   0.0
+torsion bond
+C3   core   N    core   C1   core   C1   core    0.008673   -3   0.0
+torsion bond
+N    core   C1   core   C1   core   N    core    0.021990   -1   0.0
+torsion bond
+N    core   C1   core   C1   core   N    core    0.010186   -2   0.0
+torsion bond
+N    core   C1   core   C1   core   N    core   -0.010186   -3   0.0
+torsion bond
+H    core   C1   core   C1   core   N    core   -0.000989   -1   0.0
+torsion bond
+H    core   C1   core   C1   core   N    core    0.001214   -2   0.0
+torsion bond
+H    core   C1   core   C1   core   N    core   -0.008079   -3   0.0
+torsion bond
+H    core   C1   core   C1   core   H    core   -0.019219   -1   0.0
+torsion bond
+H    core   C1   core   C1   core   H    core   -0.011348   -2   0.0
+torsion bond
+H    core   C1   core   C1   core   H    core   -0.005564   -3   0.0
+torsion bond
+C1   core   N    core   C3   core   H    core    0.130093   -1   0.0
+torsion bond
+C1   core   N    core   C3   core   H    core    0.238505   -2   0.0
+torsion bond
+C1   core   N    core   C3   core   H    core    0.017346   -3   0.0
+
+
+integrator verlet
+super 1 1 1
+
+ensemble nvt 0.1
+temperature 298
+
+equilibration 50 ps
+production    1.0 ns
+timestep      0.5 fs
+sample        2.500 ps
+write         2.500 ps
+
+output trajectory cc4.trg
+dump every 5 cc4.grs
+output movie xyz cc4.xyz
+output cif 12.0 cc4.cif
