@@ -15,6 +15,8 @@
 \usepackage{wrapfig}
 \usepackage{xargs}                      % Use more than one optional parameter in a new commands
 \usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\usepackage{longtable}
+\usepackage{booktabs}
 % 
 \usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 \newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
@@ -191,7 +193,7 @@
 
 \begin{figure}
 \centering
-	\includegraphics[width=0.65\columnwidth]{../pywindow_descriptors_distn.png}
+	\includegraphics[width=0.5\columnwidth]{../pywindow_descriptors_distn.png}
 	\caption{The distribution of cage molecule diameters (red) and cage cavity diameters (blue) among the 74 cages analyzed in this work. These diameters were computed with \texttt{pywindow}. \cite{miklitz2018pywindow}.
 	} \label{fig:pywindow_descriptors_distn}
 \end{figure}
@@ -258,10 +260,105 @@ For example, the three moments of inertia of the porosity point clouds of \textb
 	} \label{fig:misaligned}
 \end{figure}
 
-Therefore, the principle axes of rotation are in many cases insufficient to determine an alignment of a porous cage molecule that is unique and robust to small differences. The set of cages whose porosity point clouds display successive principal moments of inertia that differ by greater than one percent are \textbf{B13}, \textbf{C13}, \textbf{C20}, \textbf{CB5}, \textbf{CB6}, \textbf{CB7}, \textbf{CD1}, \textbf{CP1}, \textbf{CP3}, \textbf{CP4}, \textbf{CP5}, \textbf{IC2}, \textbf{MC3}, \textbf{NC1}, \textbf{NC2}, \textbf{RCC3a}, \textbf{WC2}, and \textbf{WC3}. Only for these cages did we give the principal axes of rotation the authority to align them. For the remaining cages, whose rotational dynamics resemble those of a sphere or disk with practically arbitrary principal axes of rotation, we resorted to employing the Coherent Point Drift algorithm to pairwise align cages as described in the ``Alignment'' section in the main text. The Julia code for our Coherent Point Drift algorithm can be found at \url{https://github.com/SimonEnsemble/CoherentPointDrift.jl}.
+Therefore, the principle axes of rotation are in many cases insufficient to determine an alignment of a porous cage molecule that is unique and robust to small differences. The set of cages whose porosity point clouds display successive principal moments of inertia that differ by greater than one percent are in Table~\ref{tbl:aligned_via_rotational_dynamics}. Only for these cages did we give the principal axes of rotation the authority to align them. For the remaining cages, whose rotational dynamics resemble those of a sphere or disk with practically arbitrary principal axes of rotation, we resorted to employing the Coherent Point Drift algorithm to pairwise align cages as described in the ``Alignment'' section in the main text. For the remaining cages not present in Table~\ref{tbl:aligned_via_rotational_dynamics}, Table~\ref{tbl:aligned_via_coherent_point_drift} shows the result of which cages where aligned to which cages (in order of top to bottom) on the basis of their porosity point clouds, using the Coherent Point Drift algorithm. The Julia code for our Coherent Point Drift algorithm can be found at \url{https://github.com/SimonEnsemble/CoherentPointDrift.jl}.
+
+
+\begin{table}[h!]
+  \caption{\color{red}List of cages aligned on the basis of the authoritative rotational dynamics of their porosity point clouds.}
+  \label{tbl:aligned_via_rotational_dynamics}
+  \centering
+  \begin{tabular}{c}
+    \toprule
+B13 \\
+C13 \\
+C20 \\
+CB5 \\
+CB6 \\
+CB7 \\
+CD1 \\
+CP1 \\
+CP3 \\
+CP4 \\
+CP5 \\
+IC2 \\
+MC3 \\
+NC1 \\
+NC2 \\
+RCC3a \\
+WC2 \\
+WC3 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{longtable}{cc}
+\hline
+ \textbf{Cage}  & \textbf{aligned to...}  \\
+ \hline
+ CC2 & CP1\\
+ WC4 & CP3\\
+ HC1 & CP4\\
+ CD2 & CP3\\
+ CC9 & CP1\\
+ CC4 & CP3\\
+ CC3 & CP3\\
+ RCC3b & CP3\\
+ RCC1d & CB5\\
+ CC10 & CP1\\
+ CD3 & CB7\\
+ A11 & CD1\\
+ B11 & CD1\\
+ CC1 & CP4\\
+ RCC1c & CB5\\
+ B23 & CD1\\
+ CC5 & CC1\\
+ C11 & CB7\\
+ C23 & CD1\\
+ MC4 & CC1\\
+ MC7 & CD1\\
+ WC1 & CP4\\
+ B15 & CC2\\
+ MC5 & CD2\\
+ C15 & CC2\\
+ B24 & CD3\\
+ MC2 & HC1\\
+ C24 & IC2\\
+ DC1 & CP1\\
+ MC1 & HC1\\
+ B18 & RCC1d\\
+ B25 & NC2\\
+ C18 & CC4\\
+ C25 & CD3\\
+ GC1 & RCC1d\\
+ B26 & RCC1d\\
+ IC1 & CC3\\
+ C26 & RCC1d\\
+ RCC1b & CB5\\
+ MC6 & B24\\
+ RCC1a & CP4\\
+ B1 & CP4\\
+ B2 & B1\\
+ B9 & B2\\
+ C8 & B2\\
+ C2 & B1\\
+ C9 & C2\\
+ B8 & C2\\
+ C1 & B1\\
+ C6 & B2\\
+ B6 & C8\\
+ C5 & C2\\
+ C4 & B8\\
+ B4 & B8\\
+ B5 & B8\\
+ C21 & B6\\
+    \hline
+          \caption{\color{red}List of cages whose porosity point clouds harbored rotational dynamics that approximate those of a sphere or disk and thus are not authoratative for aligning them. This table shows which cage these cages were aligned to, in order from top to bottom, on the basis of their porosity point clouds and using the Coherent Point Drift algorithm.}
+  \label{tbl:aligned_via_coherent_point_drift}
+\end{longtable}
 
 } % end color red
 
+\clearpage
 \newpage
 
 \section{The data matrix $\mathbf{A}$}
