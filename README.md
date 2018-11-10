@@ -10,7 +10,7 @@ Source of cage structures:
 
 
 # Structure of repository
-
+```
 .
 ├── ...
 ├── svd.ipynb                             # A Julia v1.0 notebook used to illustrate the newly learned latent space of the 74 cages
@@ -34,3 +34,4 @@ Source of cage structures:
 ├── rotational\_inertia\_aligned\_cages   # The cages after being aligned via principal axes of inertia
 ├── Explore\_accessibility.ipynb          # A Julia v1.0 notebook used to calculate accessibility of the 74 cages
 └── cage\_descriptors.ipynb               # A Python 3 notebook used to calculate descriptors for both the original 74 cages and the fluctuating cages using pywindow
+```
