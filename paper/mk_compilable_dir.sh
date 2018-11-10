@@ -1,6 +1,6 @@
 finalfolder="final_submission"
-mainfile="SI"
- # mainfile="latent_space_of_cages"
+ # mainfile="SI"
+mainfile="latent_space_of_cages"
 
 mkdir -p $finalfolder
 cp ../all_cages/latex_code_for_viz.tex $finalfolder/
