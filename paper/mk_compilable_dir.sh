@@ -1,9 +1,9 @@
 finalfolder="final_submission"
 mainfile="SI"
  # mainfile="latent_space_of_cages"
-cp ../all_cages/latex_code_for_viz.tex $finalfolder/
 
-mkdir $finalfolder
+mkdir -p $finalfolder
+cp ../all_cages/latex_code_for_viz.tex $finalfolder/
 
  # mkdir JACS_submission
 # get fig list
