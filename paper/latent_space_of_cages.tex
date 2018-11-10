@@ -79,18 +79,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \author{Arni Sturluson}
 \affiliation[Oregon State University]
-{School of Chemical, Biological, and Environmental Engineering. Corvallis, OR, USA.}
+{Oregon State University, School of Chemical, Biological, and Environmental Engineering. Corvallis, OR, USA.}
 \author{Melanie T. Huynh}
 \affiliation[Oregon State University]
-{School of Chemical, Biological, and Environmental Engineering. Corvallis, OR, USA.}
+{Oregon State University, School of Chemical, Biological, and Environmental Engineering. Corvallis, OR, USA.}
 \author{Arthur H. P. York}
 \affiliation[Oregon State University]
-{School of Chemical, Biological, and Environmental Engineering. Corvallis, OR, USA.}
+{Oregon State University, School of Chemical, Biological, and Environmental Engineering. Corvallis, OR, USA.}
 \author{Cory M. Simon}
 %\altaffiliation{A shared footnote}
 \email{Cory.Simon@oregonstate.edu}
 \affiliation[Oregon State University]
-{School of Chemical, Biological, and Environmental Engineering. Corvallis, OR, USA.}
+{Oregon State University, School of Chemical, Biological, and Environmental Engineering. Corvallis, OR, USA.}
 %\altaffiliation{Current address: Some other place, Othert\"own,
 %Germany}
 %\author{I. Ken Groupleader}
@@ -164,7 +164,7 @@
 %% if an abstract is not used by the target journal.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-Porous organic cage molecules harbor nano-sized cavities that can selectively adsorb gas molecules, lending them applications in separations and sensing. The geometry of the cavity strongly influences adsorptive selectivity.
+Porous organic cage molecules harbor nano-sized cavities that can selectively adsorb gas molecules, lending them applications in separations and sensing. The geometry of the cavity strongly influences their adsorptive selectivity.
 For comparing cages and predicting their adsorption properties, we embed/encode a set of 74 porous organic cage molecules into a low-dimensional, latent ``cage space'' on the basis of their intrinsic porosity.
 We first computationally scan each cage to generate a 3D image of its porosity. 
 Leveraging the singular value decomposition, in an unsupervised manner, we then learn across all cages an approximate, lower-dimensional subspace in which the {\color{red} 3D porosity images} lay.
@@ -367,12 +367,12 @@ To summarize, the singular value decomposition, in an unsupervised manner, learn
 	} \label{fig:eigencages}
 \end{figure}
 
-\subsection{Reconstructing a cage from eigencages} From the view of SVD, each 3D porosity image is constructed from a linear combination of the eigencages (see eqn.~\ref{eq:latent_space_view}). We show here that, remarkably, even the six eigencages in Fig.~\ref{fig:eigencages} can be enough to visually reproduce the structure of the cavity in a porous organic cage molecule. As an example, in Fig.~\ref{fig:cage_reconstruction} we show the approximated reconstruction of the 3D porosity image of porous organic cage molecule B25 using different numbers of eigencages. Mathematically, Fig.~\ref{fig:cage_reconstruction} shows the approximant given by eqn.~\ref{eq:latent_space_view} with $\nu=1,2,...,9$. Expressing B25 in terms of the first two eigencages is insufficient to capture its shape; for $\nu=4$, the cavity and windows of B25 are captured to some extent. Only until we reach $\nu=6$ does the outer-contour of the reconstructed 3D void space image of B25 well-approximate the shape of the molecule. The reconstructed B25 3D porosity image with $\nu=9$ is approaching visual indistinguishably from the exact 3D void space image in Fig.~\ref{fig:b25_exact}. This shows that e.g. a $\nu=9$-dimensional latent representation of B25 contains sufficient information to visually reproduce the shape of its cavity.
+\subsection{Reconstructing a cage from eigencages} From the view of SVD, each 3D porosity image is constructed from a linear combination of the eigencages (see eqn.~\ref{eq:latent_space_view}). We show here that, remarkably, even the six eigencages in Fig.~\ref{fig:eigencages} can be enough to visually reproduce the structure of the cavity in a porous organic cage molecule. As an example, in Fig.~\ref{fig:cage_reconstruction} we show the approximated reconstruction of the 3D porosity image of porous organic cage molecule \textbf{B25} using different numbers of eigencages. Mathematically, Fig.~\ref{fig:cage_reconstruction} shows the approximant given by eqn.~\ref{eq:latent_space_view} with $\nu=1,2,...,9$. Expressing \textbf{B25} in terms of the first two eigencages is insufficient to capture its shape; for $\nu=4$, the cavity and windows of \textbf{B25} are captured to some extent. Only until we reach $\nu=6$ does the outer-contour of the reconstructed 3D void space image of \textbf{B25} well-approximate the shape of the molecule. The reconstructed \textbf{B25} 3D porosity image with $\nu=9$ is approaching visual indistinguishably from the exact 3D void space image in Fig.~\ref{fig:b25_exact}. This shows that e.g. a $\nu=9$-dimensional latent representation of \textbf{B25} contains sufficient information to visually reproduce the shape of its cavity.
 
 \begin{figure}
 % made with image zoom 1.4. see saved VisIT session in data/grids. mesh width 4, see snapshot.vtk
 \centering
-	\subfloat[][B25, exact $\nu=74$]{\includegraphics[width=0.275\columnwidth]{B25_raw.png} \label{fig:b25_exact}}
+	\subfloat[][\textbf{B25}, exact $\nu=74$]{\includegraphics[width=0.275\columnwidth]{B25_raw.png} \label{fig:b25_exact}}
 	\qquad
 	\subfloat[][$\nu=1$]{\includegraphics[width=0.275\columnwidth]{B25_nu1.png}}
 	\subfloat[][$\nu=2$]{\includegraphics[width=0.275\columnwidth]{B25_nu2.png}}
@@ -385,7 +385,7 @@ To summarize, the singular value decomposition, in an unsupervised manner, learn
 	\subfloat[][$\nu=7$]{\includegraphics[width=0.275\columnwidth]{B25_nu7.png}}
 	\subfloat[][$\nu=8$]{\includegraphics[width=0.275\columnwidth]{B25_nu8.png}}
 	\subfloat[][$\nu=9$]{\includegraphics[width=0.275\columnwidth]{B25_nu9.png}}
-	\caption{Reconstructing cage B25 with its latent representation. (a) Exact 3D void space image of B25. (b-j) Reconstructions using latent representations of varying dimensions $\nu$. These are contours (0.5) of eqn.~\ref{eq:latent_space_view} with varying $\nu$.
+	\caption{Reconstructing cage \textbf{B25} with its latent representation. (a) Exact 3D void space image of \textbf{B25}. (b-j) Reconstructions using latent representations of varying dimensions $\nu$. These are contours (0.5) of eqn.~\ref{eq:latent_space_view} with varying $\nu$.
 	} \label{fig:cage_reconstruction}
 \end{figure}
 
