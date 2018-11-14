@@ -3,6 +3,7 @@ finalfolder="final_submission"
 mainfile="latent_space_of_cages"
 
 mkdir -p $finalfolder
+cp SI.aux $finalfolder
 cp ../all_cages/latex_code_for_viz.tex $finalfolder/
 
  # mkdir JACS_submission
