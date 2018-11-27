@@ -14,6 +14,7 @@ Source of cage structures:
 .
 ├── ...
 ├── svd.ipynb                             # A Julia v1.0 notebook used to illustrate the newly learned latent space of the 74 cages
+├── explore_flexibility.ipynb             # A Julia v1.0 notebook used to showcase the effects of flexibility in the cages
 ├── MD_files                              # Contains all Molecular Dynamics (MD) files used for the fluctuating cages
 ├── all_cages                             # Contains all cage structures in a .xyz format
 │   ├── all_cages.txt                     # A list containing the names of all 74 cages
