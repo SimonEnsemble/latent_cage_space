@@ -135,7 +135,7 @@
 %% optional argument to \title.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title[SI: Latent Space of Porous Cages]
-  {Supporting Information for: Eigencages: {\color{red} Learning a latent space of porous cage molecules}}
+  {Supporting Information for: Eigencages: Learning a latent space of porous cage molecules}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Some journals require a list of abbreviations or keywords to be
@@ -203,7 +203,6 @@
 
 \section{Aligning the cages before scanning for void space} 
 
-{\color{red}
 \subsection{Porosity point clouds}
 \label{sec:porosity_pt_cld}
 As a basis to determine the rotational alignments of the cages that will best align groups of cages with similarly-shaped cavities, we first generate a set of points that `fill' the porosity of each cage. As examples, Fig.~\ref{fig:porosity_pt_cloud} shows example porosity point clouds for \textbf{NC2} and \textbf{A11}. We generate the porosity point cloud by successively inserting helium adsorbates into a sphere circumscribing each cage molecule. The radius of the sphere is chosen as the cage molecule radius. We add the position of the randomly inserted helium adsorbate to a stack if and only if the point is classified as void space, rejecting the points that were not classified as void space (determined by the potential energy of a helium adsorbate probe there). This stack of points that lie in the void space of the cage and thus trace out the shape of its cavity is the \emph{porosity point cloud} of a cage. We biased insertions towards the center of the cavity to emphasize the inner-cavities of the cages. For each insertion proposal, we generated a vector $\frac{r}{5}[\mathcal{N}_x,\mathcal{N}_y,\mathcal{N}_z]$ where $\mathcal{N}_{x,y,z}$ are Gaussian distributed numbers with unit variance and zero mean and $r$ is the radius of the cage molecule; points outside of the sphere circumscribing the cage are rejected. The factor of $1/5$ is to concentrate the porosity point cloud in the cavity instead of the periphery. This is especially important for the rotational dynamics, since the points furthest from the center have a greater influence on the rotational dynamics. We used 100,000 points to describe the porosity point cloud for computing rotational dynamics and 5,000 points for applying the Coherent Point Drift algorithm since the latter is more computationally expensive.
@@ -212,8 +211,7 @@ As a basis to determine the rotational alignments of the cages that will best al
 \centering
 	\includegraphics[width=0.45\columnwidth]{NC2_porosity_point_cloud.png}
 	\includegraphics[width=0.45\columnwidth]{A11_porosity_point_cloud.png}
-	\caption{{\color{red} The porosity point clouds (5000 points each) generated to describe the cavity of \textbf{NC2} (left) and \textbf{A11} (right) are shown along with the cage structures.
-	}% color red end
+	\caption{The porosity point clouds (5000 points each) generated to describe the cavity of \textbf{NC2} (left) and \textbf{A11} (right) are shown along with the cage structures.
 	} \label{fig:porosity_pt_cloud}
 \end{figure}
 
@@ -238,8 +236,7 @@ The porosity point clouds of cage molecules that exhibit a degree of symmetry ca
 \centering
 	\subfloat[][]{\includegraphics[width=0.3\columnwidth]{../principal_axes_rotation_failure/SO3_axes_marked.png} \label{fig:SO3}}
 	\subfloat[][]{\includegraphics[width=0.5\columnwidth]{B6_propeller.png} \label{fig:B6_propeller}}
-	\caption{{\color{red} When the principal axes of rotation are not uniquely defined. (a) Sulfur trioxide (SO$_3$) is a trigonal planar molecule with degenerate principal axes of rotation in the $x$-$y$ plane. (b) \textbf{B6} is a cage molecule whose rotational dynamics resemble SO$_3$ and thus exhibits nearly degenerate principal axes of rotation in one plane.
-	}% color red end
+	\caption{When the principal axes of rotation are not uniquely defined. (a) Sulfur trioxide (SO$_3$) is a trigonal planar molecule with degenerate principal axes of rotation in the $x$-$y$ plane. (b) \textbf{B6} is a cage molecule whose rotational dynamics resemble SO$_3$ and thus exhibits nearly degenerate principal axes of rotation in one plane (the plane of the page).
 	} \label{fig:irrationallyaligned}
 \end{figure}
 
@@ -247,7 +244,7 @@ As a consequence, the principal axes of rotation for a symmetric molecule such a
 
 The cavities of several cage molecules exhibit a high degree of symmetry, so as to behave akin to SO$_3$, where the principal axes of rotation are not unique and thus cannot be used to consistently align them. Interestingly, juxtapose cage \textbf{B6} in Fig.~\ref{fig:B6_propeller} with SO$_3$, which resembles a three-blade propeller \cite{peraire2008lecture} with nearly degenerate principal axes of rotation in one plane. While we focused on the porosity point clouds to align the cages more on the basis of their cavity shapes, as opposed to focusing directly on the atoms of the cage, the idea is the same: the porosity point clouds of many cages harbor rotational dynamics akin to a sphere or disk, where the principal axes of rotation are degenerate and thus sensitive to small differences in the structure/cavity shape. 
 
-For example, the three moments of inertia of the porosity point clouds of \textbf{CC1} and of \textbf{CC3} differ by less than 1\%, indicating that the rotational dynamics of \textbf{CC1} and \textbf{CC3} are akin to a sphere; therefore, using the principal axes of rotation to align \textbf{CC1} and \textbf{CC3} (i) theoretically will not provide a unique manner in which to align them and (ii) will be extremely sensitive to small perturbations in the structure and small differences in the random points within the porosity point cloud. Note that \textbf{CC3} and \textbf{CC1} differ only in the vertices external to the cavity, but, as Fig.~\ref{fig:misaligned} shows, \textbf{CC1} and \textbf{CC3} are aligned irrationally on the basis of their computed principal axes of rotation due to the [near-]degeneracy of their axes of rotation. Another example that is highly related to the SO$_3$ example in Fig.~\ref{fig:SO3} are \textbf{B6} and \textbf{B8}, also shown in Fig.~\ref{fig:misaligned}. Here, small differences in the three propeller-blade-like moieties that protrude from \textbf{B6} and \textbf{B8} as well as small differences in the random positions in the porosity point cloud result in significantly inconsistent alignments for comparing \textbf{B6} and \textbf{B8}. \textbf{B6} and \textbf{B8} much resemble the SO$_3$ example in Fig.~\ref{fig:SO3}, as two principal axes of rotation are nearly degenerate and thus the principal axes in that plane (the plane of the page in Fig.~\ref{fig:allcagesdetailed}) are very sensitive to small perturbations in the structure.
+For example, the three moments of inertia of the porosity point clouds of \textbf{CC1} and of \textbf{CC3} differ by less than 1\%, indicating that the rotational dynamics of \textbf{CC1} and \textbf{CC3} are akin to a sphere; therefore, using the principal axes of rotation to align \textbf{CC1} and \textbf{CC3} (i) theoretically will not provide a unique manner in which to align them and (ii) will be extremely sensitive to small perturbations in the structure and small differences in the randomly chosen points comprising the porosity point cloud. Note that \textbf{CC3} and \textbf{CC1} differ only in the vertices external to the cavity, but, as Fig.~\ref{fig:misaligned} shows, \textbf{CC1} and \textbf{CC3} are aligned irrationally on the basis of their computed principal axes of rotation due to the [near-]degeneracy of their axes of rotation. Another example that is highly related to the SO$_3$ example in Fig.~\ref{fig:SO3} are \textbf{B6} and \textbf{B8}, also shown in Fig.~\ref{fig:misaligned}. Here, small differences in the three propeller-blade-like moieties that protrude from \textbf{B6} and \textbf{B8} as well as small differences in the random positions in the porosity point cloud result in significantly inconsistent alignments for comparing \textbf{B6} and \textbf{B8}. \textbf{B6} and \textbf{B8} much resemble the SO$_3$ example in Fig.~\ref{fig:SO3}, as two principal axes of rotation are nearly degenerate and thus the principal axes in that plane (the plane of the page in Fig.~\ref{fig:allcagesdetailed}) are very sensitive to small perturbations in the structure.
 
 \begin{figure}
 \centering
@@ -255,8 +252,7 @@ For example, the three moments of inertia of the porosity point clouds of \textb
 	\subfloat[][CC1]{\includegraphics[width=0.45\columnwidth]{CC1_porosity_point_cloud.png}} \qquad
 		\subfloat[][B6]{\includegraphics[width=0.45\columnwidth]{B6_porosity_point_cloud.png}}
 	\subfloat[][B8]{\includegraphics[width=0.45\columnwidth]{B8_porosity_point_cloud.png}}
-	\caption{{\color{red} Cases where the computed principal axes of rotation of the porosity point clouds do not provide reasonable alignments of cages. Shown are the porosity point clouds and structures of four cages. (a, b) The rotational dynamics of \textbf{CC1} and \textbf{CC3} are akin to a sphere; the three moments of inertia of the porosity point clouds for each \textbf{CC1} and \textbf{CC3} are computed to differ less than 1\% from one another. Shown are the two cages aligned with the computed principal axes of rotation of their porosity point clouds. Despite the structures differing only in the their vertices at the periphery of the cage, the two cages are aligned inconsistently/irrationally. (c, d) Shown are cages \textbf{B6} and \textbf{B8} aligned with the principal axes of rotation of their porosity point clouds. \textbf{B6} and \textbf{B8} have two nearly degenerate axes of rotation in the plane of the page. As a result, despite only subtle differences in the three propeller-blade-like moieties that protrude from their cores and small differences in the random positions in the porosity point clouds, these two cages are aligned irrationally.
-	}% color red end
+	\caption{Cases where the computed principal axes of rotation of the porosity point clouds do not provide reasonable alignments of cages. Shown are the porosity point clouds and structures of four cages. (a, b) The rotational dynamics of \textbf{CC1} and \textbf{CC3} are akin to a sphere; the three moments of inertia of the porosity point clouds for each \textbf{CC1} and \textbf{CC3} are computed to differ less than 1\% from one another. Shown are the two cages aligned with the computed principal axes of rotation of their porosity point clouds. Despite the structures differing only in the their vertices at the periphery of the cage, the two cages are aligned inconsistently/irrationally. (c, d) Shown are cages \textbf{B6} and \textbf{B8} aligned with the principal axes of rotation of their porosity point clouds. \textbf{B6} and \textbf{B8} have two nearly degenerate axes of rotation in the plane of the page. As a result, despite only subtle differences in the three propeller-blade-like moieties that protrude from their cores and small differences in the random positions in the porosity point clouds, these two cages are aligned irrationally.
 	} \label{fig:misaligned}
 \end{figure}
 
@@ -264,7 +260,7 @@ Therefore, the principle axes of rotation are in many cases insufficient to dete
 
 
 \begin{table}[h!]
-  \caption{\color{red}List of cages aligned on the basis of the authoritative rotational dynamics of their porosity point clouds.}
+  \caption{List of cages aligned on the basis of the authoritative rotational dynamics of their porosity point clouds.}
   \label{tbl:aligned_via_rotational_dynamics}
   \centering
   \begin{tabular}{c}
@@ -352,11 +348,9 @@ WC3 \\
  B5 & B8\\
  C21 & B6\\
     \hline
-          \caption{\color{red}List of cages whose porosity point clouds harbored rotational dynamics that approximate those of a sphere or disk and thus are not authoratative for aligning them. This table shows which cage these cages were aligned to, in order from top to bottom, on the basis of their porosity point clouds and using the Coherent Point Drift algorithm.}
+          \caption{List of cages whose porosity point clouds harbored rotational dynamics that approximate those of a sphere or disk and thus are not authoratative for aligning them. This table shows which cage these cages were aligned to, in order from top to bottom, on the basis of their porosity point clouds and using the Coherent Point Drift algorithm.}
   \label{tbl:aligned_via_coherent_point_drift}
 \end{longtable}
-
-} % end color red
 
 \clearpage
 \newpage
@@ -366,7 +360,7 @@ WC3 \\
 \begin{figure}
 \centering
 	\includegraphics[width=\columnwidth]{../data_matrix_viz.png}
-	\caption{An attempt at visualizing the structure of the $c \times g^3$ data matrix $\mathbf{A}$. The color depicts the magnitude of the entry of the matrix. This is an ``attempt'' because $g^3>>c$, so the data matrix $\mathbf{A}$ is wide and difficult to visualize without a longer page. Zoom in to see some structure. We remark that 48334/125000 of the columns (representing pixels in the 3D porosity images of the cages) are non-zeros.
+	\caption{An attempt at visualizing the structure of the $c \times g^3$ data matrix $\mathbf{A}$. The color depicts the magnitude of the entry of the matrix. This is an ``attempt'' because $g^3>>c$, so the data matrix $\mathbf{A}$ is wide and difficult to visualize without a much longer page. We remark that 48334/125000 of the columns (representing pixels in the 3D porosity images of the cages) are non-zeros.
 	} \label{fig:data_matrix}
 \end{figure}
 
@@ -476,17 +470,17 @@ Fig.~\ref{fig:cage_space_colored_by_diams_2D} depicts how the 2D embedding (by t
 \newpage
 \clearpage
 
-\section{\color{red}Assessing effects of flexibility in cages} 
+\section{Assessing effects of flexibility in cages} 
 \label{sec:flexibility}
 
-{\color{red}To evaluate how sensitive our methods are to flexibility, four cages (\textbf{CC2}, \textbf{CC3}, \textbf{CC4} and \textbf{CC5}) were allowed to fluctuate at $298$ K in a molecular dynamics (MD) simulation. We considered an isolated cage only. The simulations were performed using GULP v5.0 \cite{gale1997gulp} in the NVT ensemble using the leapfrog Verlet algorithm with the Nose-Hoover thermostat following an initial geometrical optimization of the cage structure. The cage-specific force field (CSFF) was used to model the bond, angle and torsion potentials \cite{holden2012bespoke}; missing parameters were either obtained from the polymer consistent force field (PCFF) \cite{sun1994ab,sun1994force,sun1995ab} as implemented by \texttt{DL$\_$FIELD v4.3} \cite{yong2016dlfield} or a slightly modified version of a PCFF parameter was used. The MD files with every force field parameter can be found on \url{github.com/SimonEnsemble/latent_cage_space/MD_files/*.gin}, where the origin of each potential parameter can be seen in the comments. The CSFF was specifically developed to properly describe porous organic cages. Both Coulombic and Lennard Jones (12-6) potentials were used for interactions between atoms separated by two or more atoms in the bonding graph. Partial charges were assigned to the cage atoms using the parameters provided by the PCFF as given by Holden et al. \cite{holden2012bespoke}. No periodic boundaries were used in these simulations since we considered isolated cage molecules. The equilibration time was $50$ ps while the production time was $1$ ns with a timestep of $0.5$ fs.
+To evaluate how sensitive our methods are to flexibility, four cages (\textbf{CC2}, \textbf{CC3}, \textbf{CC4} and \textbf{CC5}) were allowed to fluctuate at $298$ K in a molecular dynamics (MD) simulation. We considered an isolated, empty cage only. The simulations were performed using GULP v5.0 \cite{gale1997gulp} in the NVT ensemble using the leapfrog Verlet algorithm with the Nose-Hoover thermostat following an initial geometrical optimization of the cage structure. The cage-specific force field (CSFF) was used to model the bond, angle and torsion potentials \cite{holden2012bespoke}; missing parameters were either obtained from the polymer consistent force field (PCFF) \cite{sun1994ab,sun1994force,sun1995ab} as implemented by \texttt{DL$\_$FIELD v4.3} \cite{yong2016dlfield} or a slightly modified version of a PCFF parameter was used. The MD files with every force field parameter can be found on \url{github.com/SimonEnsemble/latent_cage_space/MD_files/*.gin}, where the origin of each potential parameter can be seen in the comments. The CSFF was specifically developed to properly describe porous organic cages. Both Coulombic and Lennard Jones (12-6) potentials were used for interactions between atoms separated by two or more atoms in the bonding graph. Partial charges were assigned to the cage atoms using the parameters provided by the PCFF as given by Holden et al. \cite{holden2012bespoke}. No periodic boundaries were used in these simulations since we considered isolated cage molecules. The equilibration time was $50$ ps while the production time was $1$ ns with a timestep of $0.5$ fs.
 
-We initiated the MD simulation on the aligned cages (as opposed to cage structures taken directly from Miklitz et al. \cite{miklitz2017computational}) rather than going through the process of re-aligning the MD snapshots, due to the excessive computational time required for the Coherent Point Drift algorithm. During the MD simulation, $400$ snapshots of each fluctuating cage were gathered. To help confirm the validity of the simulations, we calculated the window diameter for each snapshot in \textbf{CC3} using \texttt{pywindow} (Fig.~\ref{fig:window_diameter_hist}). Holden et al.\cite{holden2012bespoke} did a similar analysis of the \textbf{CC3} window diameter during a MD simulation with the before-mentioned CSFF force field, and our result appears to be in good agreement with theirs.
+We initiated the MD simulation on the aligned cages (as opposed to cage structures taken directly from Miklitz et al. \cite{miklitz2017computational}) rather than going through the process of re-aligning the MD snapshots, due to the excessive computational time required for the Coherent Point Drift algorithm. During the MD simulation, $400$ snapshots of each fluctuating cage were gathered at equally spaced times. To help confirm the validity of the simulations, we calculated the window diameter for each snapshot in \textbf{CC3} using \texttt{pywindow} (Fig.~\ref{fig:window_diameter_hist}). Holden et al.\cite{holden2012bespoke} did a similar analysis of the \textbf{CC3} window diameter during a MD simulation with the before-mentioned CSFF force field, and our distribution of window diameters among the MD snapshots appears to be in good agreement with theirs.
 
 \begin{figure}
 \centering
 	\includegraphics[width=0.65\columnwidth]{../cc3_histogram.png}
-	\caption{\color{red}A histogram of the window diameters, calculated using \texttt{pywindow}, exhibited by each snapshot of \textbf{CC3} from molecular dynamics simulations described above. All four windows of \textbf{CC3} are included.
+	\caption{A histogram of the window diameters, calculated using \texttt{pywindow}, exhibited by each snapshot of \textbf{CC3} from molecular dynamics simulations described above. All four windows of \textbf{CC3} are included.
 	} \label{fig:window_diameter_hist}
 \end{figure}
 
@@ -500,7 +494,8 @@ The idea here is to express each 3D porosity image of a snapshot, $\mathbf{a}_i$
 \begin{figure}
 \centering
 	\includegraphics[width=\columnwidth]{../PCA_latent_cage_space_with_flexible_cages_2D.pdf}
-	\caption{\color{red}The 3D porosity images of the snapshots of the flexible cages \textbf{CC2} (cyan), \textbf{CC3} (orange), \textbf{CC4} (purple) and \textbf{CC5} (maroon) during molecular dynamics simulations are projected onto the first two dimensions of our latent space. The green points are the first two dimensions of the latent representations $\mathbf{U}_2\mathbf{\Sigma}_2$ of the 74 rigid cages in Fig.~\ref{fig:cages}. Each fluctuating cage explores a latent \emph{region}. The region explored is determined by the different geometrical configurations its cavity explores while undergoing thermal fluctuations. (The region explored by the MD snapshots does not overlap the latent representation of the rigid structure pulled from Miklitz et al. \cite{miklitz2017computational} (solid point) because the molecular model (CSFF/PCFF) predicts a slightly different minimum-energy structure than the cage pulled from the Cambridge Structural Database by Miklitz et al. \cite{miklitz2017computational}.) Note \textbf{MC6} is omitted since it is an outlier and stretched the axes on the plot. 
+	\caption{The black points are the first two dimensions of the latent representations of the (rigid) cages learned by SVD, rows of $\mathbf{U}_2\mathbf{\Sigma}_2$.
+The 3D porosity images of snapshots of cages \textbf{CC2}, \textbf{CC3}, \textbf{CC4} and \textbf{CC5} (colored) during molecular dynamics simulations are projected onto this two-dimensional latent space. Each fluctuating cage explores a latent \emph{region} determined by the set of cavity shapes explored while undergoing thermal fluctuations. \textbf{MC6}, an outlier, is omitted to avoid stretched axes. (The region explored by the MD snapshots does not overlap the latent representation of the rigid structure pulled from Miklitz et al. \cite{miklitz2017computational} (solid point) because the molecular model (CSFF/PCFF) predicts a slightly different minimum-energy structure than the cage pulled from the Cambridge Structural Database by Miklitz et al. \cite{miklitz2017computational}.)
 	} \label{fig:pca_space_with_flex}
 \end{figure}
 
@@ -511,19 +506,18 @@ In the rigid view of cages, we think about each cage as a point in latent space.
 \begin{figure}
 \centering
 	\includegraphics[width=0.65\columnwidth]{../pore_diameter_histogram.png}
-	\caption{\color{red}A histogram of the pore diameter, calculated using \texttt{pywindow}, exhibited by snapshots during the MD simulations. The colors denote the histograms for \textbf{CC2}, \textbf{CC3}, \textbf{CC4}, and \textbf{CC5}.
+	\caption{A histogram of the pore diameter, calculated using \texttt{pywindow}, exhibited by snapshots during the MD simulations. The colors denote the histograms for \textbf{CC2}, \textbf{CC3}, \textbf{CC4}, and \textbf{CC5}.
 	} \label{fig:pore_diameter_histogram}
 \end{figure}
 
 Note that the region explored by the MD snapshots in Fig.~\ref{fig:pca_space_with_flex} does not overlap the latent representation of the rigid structure pulled from Miklitz et al. \cite{miklitz2017computational} (correspondingly colored solid point). The reason is that force field predicts a slightly different minimum-energy structure than the cage pulled from the Cambridge Structural Database by Miklitz et al. \cite{miklitz2017computational}. Regardless, Fig.~\ref{fig:pca_space_with_flex} provides valuable insight, showing how flexible cages explore regions of latent space as their cavity fluctuates.
-}
 %Talk about how the fluctuation might be different if solvent is within the pore? Static/Dynamic 
 
 \clearpage
 
-\section{\color{red}Exploring accessibility of cages to xenon}
+\section{Exploring accessibility of cages to xenon}
 \label{sec:inaccessibility}
-{\color{red}
+
 During the Henry coefficient calculations, we insert xenon atoms at random positions within a simulation box encompassing the cage molecule (see Sec.~\ref{sec:henrydetails}). These simulations may insert a xenon atom internal to a cage cavity whose window is too small for xenon to enter. This is an undesirable scenario, since xenon could practically never diffuse into the cavity in practice, yet that inner cavity is contributing to the simulated Henry coefficient. Here, we determine which cages have cavities that are inaccessible to a xenon or krypton atom.
 
 To assess if an adsorbate can enter through a window into the cavity of the porous organic cages, we superimposed a grid of points over each cage molecule such that the distance between each adjacent datapoint was $0.1$ \AA. The potential energy of the adsorbate (xenon, krypton) was calculated at each point using a 12-6 Lennard Jones potential. Force field parameters were taken from the Universal Force Field (UFF) and geometric mixing rules were applied (14 $\angstrom$ cutoff). After the potential energy grid was computed, we assigned an integer value to each point, $-1$ if the energy was above a certain energy value (here $15 \ k_BT$ where $k_\text{B}$ is the Boltzmann constant and the temperature was taken to be $T = 298 \ \text{K}$), which corresponds to a non-occupiable point, and $1$ if the energy was below that value, corresponding to an occupiable point. The potential energy value $15k_B T$ is defined to be a potential energy barrier that is prohibitively high for xenon to occupy\cite{kim2012high}.
@@ -534,7 +528,7 @@ This method was applied to all of the 74 rigid porous organic cages, not taking 
 Miklitz et al.\cite{miklitz2017computational} conducted a similar analysis where they used molecular dynamics (MD) to observe the pore breathing and calculated the distribution of pore-limiting envelopes (PLE) of the MD snapshots. Their dynamic PLE analysis of what percentage of the time cages have windows large enough for \ce{Xe} to percolate into the cavities contrasts with our method of focusing on a static cage structure and making a binary classification as accessible or inaccessible based on the potential energy barrier at the window. Of the subset of 12 cages they studied, \textbf{CP1} and \textbf{WC4} were the only two they identified as having cavities inaccessible to xenon practically for all of the time (0.2\% of the time); our analysis identifies \textbf{CP1} and \textbf{WC4} as inaccessible as well. A notable exception was \textbf{RCC3a}, which was open only 1.1\% of the time in their MD simulations, but, according to our analysis, is accessible. A possible source of discrepancy is that the force field used in the MD simulations of Miklitz et al.\cite{miklitz2017computational} may provide a different ``average'' structure than deposited in the Cambridge Structural Database (the source of our \textbf{RCC3a} structure from Ref.\cite{miklitz2017computational}). Other cages such as \textbf{CC3}, \textbf{CC2} and \textbf{NC2} were open to \ce{Xe} roughly $10 \%$ of the time, considered accessible as in our analysis. 
 
 \begin{table}
-  \caption{\color{red}A list of the cages found to be inaccessible to xenon alongside their maximum window diameter (calculated with \texttt{pywindow}).}
+  \caption{A list of the cages found to be inaccessible to xenon alongside their maximum window diameter (calculated with \texttt{pywindow}).}
   \label{tbl:inaccessible}
   \begin{tabular}{cc}
     \hline
@@ -561,14 +555,14 @@ Miklitz et al.\cite{miklitz2017computational} conducted a similar analysis where
 \newpage
 
 
-\section{\color{red}Adsorption site analysis}
+\section{Adsorption site analysis}
 Here, we analyze the distribution of adsorption sites of xenon internal and external to the cavity of the cage molecules. We consider any local minimum in the potential energy as a potential adsorption site. We identified potential energy minimia on the basis of a computed potential energy grid as in Sec.~\ref{sec:inaccessibility}. We looked at the 3D array storing the potential energy grid, looped over each element, and, if no lower values were adjacent to it, stored it as a local minimum. All local minima exhibiting positive energy values (repulsive) were discarded. 
-Fig.~\ref{fig:energy_vs_dist} shows each local energy minimum as a point; the $y$-axis is the value of the potential energy at the local minimum and the $x$-axis is its distance from the center of mass of the cage. For reference, we plotted as a vertical line the radius of the cavity, computed by taking the 2-norm of the vector between the center of mass of the cage and the closest atom and correcting it with the van der Waals radius of the closest atom. This allows us to assess the relative potential energies of the adsorption sites internal to the cavity versus on the periphery or window site of the molecule.}
+Fig.~\ref{fig:energy_vs_dist} shows each local energy minimum as a point; the $y$-axis is the value of the potential energy at the local minimum and the $x$-axis is its distance from the center of mass of the cage. For reference, we plotted as a vertical line the radius of the cavity, computed by taking the 2-norm of the vector between the center of mass of the cage and the closest atom and correcting it with the van der Waals radius of the closest atom. This allows us to assess the relative potential energies of the adsorption sites internal to the cavity versus on the periphery or window site of the molecule.
 
 \begin{figure}
 \centering
 	\includegraphics[width=\columnwidth]{../distance_of_binding_sites.pdf}
-	\caption{{\color{red}Energy of each local potential energy of xenon minima [kJ mol$^{-1}$] plotted against the distance from the center of mass of each cage [\AA]. The red frames correspond to the cages deemed inaccessible by our flood fill algorithm. The cavity diameter is plotted as a vertical, dotted line to give an idea of the relative potential energies of adsorption sites within the cavity versus on the periphery or window site of the cage.}
+	\caption{Energy of each local potential energy of xenon minima [kJ mol$^{-1}$] plotted against the distance from the center of mass of each cage [\AA]. The red frames correspond to the cages deemed inaccessible by our flood fill algorithm. The cavity diameter is plotted as a vertical, dotted line to give an idea of the relative potential energies of adsorption sites within the cavity versus on the periphery or window site of the cage.
 	} \label{fig:energy_vs_dist}
 \end{figure}
 
