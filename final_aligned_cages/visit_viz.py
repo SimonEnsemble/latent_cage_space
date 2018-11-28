@@ -241,12 +241,12 @@ def write_png(xyzname, zoom, show_box=True):
     # super atom and sphere quality
     MoleculeAtts = MoleculeAttributes()
     MoleculeAtts.drawAtomsAs = MoleculeAtts.SphereAtoms  # NoAtoms, SphereAtoms, ImposterAtoms
-    MoleculeAtts.scaleRadiusBy = MoleculeAtts.Fixed  # Fixed, Covalent, Atomic, Variable
+    MoleculeAtts.scaleRadiusBy = MoleculeAtts.Covalent  # Fixed, Covalent, Atomic, Variable
     MoleculeAtts.drawBondsAs = MoleculeAtts.CylinderBonds  # NoBonds, LineBonds, CylinderBonds
     MoleculeAtts.colorBonds = MoleculeAtts.ColorByAtom  # ColorByAtom, SingleColor
     MoleculeAtts.bondSingleColor = (128, 128, 128, 255)
     MoleculeAtts.radiusVariable = "default"
-    MoleculeAtts.radiusScaleFactor = 1
+    MoleculeAtts.radiusScaleFactor = 0.8
     MoleculeAtts.radiusFixed = 0.3
     MoleculeAtts.atomSphereQuality = MoleculeAtts.Super  # Low, Medium, High, Super
     MoleculeAtts.bondCylinderQuality = MoleculeAtts.Super  # Low, Medium, High, Super
@@ -363,6 +363,6 @@ def write_png(xyzname, zoom, show_box=True):
 cages = [line.rstrip('\n') for line in open('../all_cages/all_cages.txt')]
  # write_png("RCC1d_aligned", 1.3, show_box=False)
 write_png("NC2", 1.3, show_box=True)
-for cage in cages:
-    write_png(cage, 1.3, show_box=False)
-    write_png(cage, 1.3, show_box=True)
+ # for cage in cages:
+ #     write_png(cage, 1.3, show_box=False)
+ #     write_png(cage, 1.3, show_box=True)
