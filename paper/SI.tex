@@ -493,15 +493,13 @@ The idea here is to best-approximate each 3D porosity image of a snapshot, $\mat
 
 \begin{figure}
 \centering
-	\includegraphics[width=\columnwidth]{../PCA_latent_cage_space_with_flexible_cages_2D.pdf}
-	\caption{The black points are the first two dimensions of the latent representations of the (rigid) cages learned by SVD, rows of $\mathbf{U}_2\mathbf{\Sigma}_2$.
-The 3D porosity images of snapshots of cages \textbf{CC2}, \textbf{CC3}, \textbf{CC4} and \textbf{CC5} (colored) during molecular dynamics simulations are projected onto this two-dimensional latent space. Each fluctuating cage explores a latent \emph{region} determined by the set of cavity shapes explored while undergoing thermal fluctuations. \textbf{MC6}, an outlier, is omitted to avoid stretched axes. (The region explored by the MD snapshots does not overlap the latent representation of the rigid structure pulled from Miklitz et al. \cite{miklitz2017computational} (solid point) because the molecular model (CSFF/PCFF) predicts a slightly different minimum-energy structure than the cage pulled from the Cambridge Structural Database by Miklitz et al. \cite{miklitz2017computational}.)
-	} \label{fig:pca_space_with_flex}
+	\includegraphics[width=0.8\columnwidth]{../PCA_latent_cage_space_with_flexible_cages_2D_SI.pdf}
+	\caption{This figure is equivalent to Fig.~\ref{fig:md_snapshots} in the main text, except we also show here that the region explored by the MD snapshots does not overlap the latent representation of the rigid structures of \textbf{CC2} and \textbf{CC5} pulled from Miklitz et al. \cite{miklitz2017computational} (colored, solid points) because the molecular model (CSFF/PCFF) predicts a minimum-energy structure perturbed from the cage pulled from the Cambridge Structural Database by Miklitz et al. \cite{miklitz2017computational}. The latent regions explored by the snapshots of \textbf{CC2} and \textbf{CC5} are, however, nearby the point representing the structure pulled from Miklitz et al. Moreover, the latent region explored by \textbf{CC3} and \textbf{CC4} do overlap the point that represents the structure pulled from the Cambridge Structural Database by Miklitz et al. \cite{miklitz2017computational}
+	} \label{fig:md_snapshots_SI}
 \end{figure}
 
-Fig.~\ref{fig:pca_space_with_flex} shows the projections of the MD snapshots in addition to the first two dimensions of the latent representations $\mathbf{U}_2\mathbf{\Sigma}_2$ of the original 74-rigid-cage dataset. All four cages undergo thermal fluctuations and explore a small region of the latent space. 
+Fig.~\ref{fig:md_snapshots_SI} shows the projections of the MD snapshots in addition to the first two dimensions of the latent representations $\mathbf{U}_2\mathbf{\Sigma}_2$ of the original 74-rigid-cage dataset. All four cages undergo thermal fluctuations and explore a small region of the latent space. 
 In the rigid view of cages, we think about each cage as a point in latent space. In the flexible view of cages, each cage explores a region in latent space. The size and shape of the region is dictated by the distribution of cavity shapes adopted while undergoing thermal fluctuations. Out of the four selected cages, \textbf{CC5} is the largest and most flexible, leading to a larger region of latent space explored. Comparatively, MD snapshots of \textbf{CC2}, \textbf{CC3} and \textbf{CC4} occupy a much smaller region than \textbf{CC5} due to their smaller size and more rigid structure. Indeed, the histogram of pore diameters exhibited by the snapshots in Fig.~\ref{fig:pore_diameter_histogram} confirms that \textbf{CC5} explores a broader range of pore sizes than each \textbf{CC2}, \textbf{CC3}, and \textbf{CC4} during the MD simulations.
-
 
 \begin{figure}
 \centering
@@ -510,7 +508,7 @@ In the rigid view of cages, we think about each cage as a point in latent space.
 	} \label{fig:pore_diameter_histogram}
 \end{figure}
 
-Note that the region explored by the MD snapshots in Fig.~\ref{fig:pca_space_with_flex} does not overlap the latent representation of the rigid structure pulled from Miklitz et al. \cite{miklitz2017computational} (correspondingly colored solid point). The reason is that force field predicts a slightly different minimum-energy structure than the cage pulled from the Cambridge Structural Database by Miklitz et al. \cite{miklitz2017computational}. Regardless, Fig.~\ref{fig:pca_space_with_flex} provides valuable insight, showing how flexible cages explore regions of latent space as their cavity fluctuates.
+Note that the region explored by the MD snapshots of \textbf{CC2} and \textbf{CC5} in Fig.~\ref{fig:md_snapshots_SI} does not overlap the latent representation of the rigid structure pulled from Miklitz et al. \cite{miklitz2017computational} (correspondingly colored solid point). The reason is that force field predicts a slightly different minimum-energy structure than the cage pulled from the Cambridge Structural Database by Miklitz et al. \cite{miklitz2017computational}. Regardless, Fig.~\ref{fig:md_snapshots_SI} provides valuable insight, showing how flexible cages explore regions of latent space as their cavity fluctuates.
 %Talk about how the fluctuation might be different if solvent is within the pore? Static/Dynamic 
 
 \clearpage
